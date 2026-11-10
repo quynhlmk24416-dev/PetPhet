@@ -1,0 +1,13 @@
+<!-- Mascot avatar with an optional speech bubble. Data: className, sizeClass, bannerUrl, isDog, isCat, isDuo, message -->
+<div class="inline-flex items-center gap-3 {{className}}">
+  <div class="{{sizeClass}} rounded-2xl overflow-hidden border-2 border-[#EDC55B] bg-[#FCF5DC] shadow-sm flex items-center justify-center shrink-0 relative">
+    <img data-if="isDog" src="{{bannerUrl}}" alt="Cún Phết" class="w-[240%] h-[240%] max-w-none object-cover object-[15%_40%]" />
+    <img data-if="isCat" src="{{bannerUrl}}" alt="Mèo Bông" class="w-[240%] h-[240%] max-w-none object-cover object-[85%_45%]" />
+    <img data-if="isDuo" src="{{bannerUrl}}" alt="Cún Phết &amp; Mèo Bông" class="w-[180%] h-[180%] max-w-none object-cover object-[50%_45%]" />
+  </div>
+
+  <div data-if="message" class="relative bg-white border border-[#E8CCAD] text-[#81451F] px-4 py-2 rounded-2xl shadow-sm text-sm font-medium">
+    <div class="absolute top-1/2 -left-1.5 -translate-y-1/2 w-3 h-3 bg-white border-l border-b border-[#E8CCAD] rotate-45"></div>
+    {{message}}
+  </div>
+</div>

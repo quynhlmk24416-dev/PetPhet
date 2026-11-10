@@ -1,0 +1,18 @@
+<!-- Public (logged-out) navigation bar. Data: logoUrl, goHome, navItems[], serviceNavProps, onOpenLogin, onOpenRegister -->
+<header class="pet-public-navbar-wrap">
+  <div class="pet-public-navbar">
+    <button class="pet-brand" data-on-click="goHome" aria-label="Pet Phết - Trang chủ">
+      <img class="pet-brand-logo" src="{{logoUrl}}" alt="Pet Phết – Pet First" />
+    </button>
+    <nav class="pet-public-nav" aria-label="Điều hướng website">
+      <t-fragment data-for="item in navItems" data-key="item.id">
+        <div data-if="item.isServices" data-component="ServiceNavDropdown" data-props="serviceNavProps"></div>
+        <button data-if="!item.isServices" class="{{item.activeClass}}" data-on-click="item.onClick" aria-current="{{item.ariaCurrent}}" type="button">{{item.label}}</button>
+      </t-fragment>
+    </nav>
+    <div class="pet-public-actions">
+      <button class="pet-public-login" data-on-click="onOpenLogin"><i data-icon="LogIn" size="18" aria-hidden="true"></i> Đăng nhập</button>
+      <button class="pet-public-register" data-on-click="onOpenRegister"><i data-icon="UserRoundPlus" size="18" aria-hidden="true"></i> Đăng ký</button>
+    </div>
+  </div>
+</header>

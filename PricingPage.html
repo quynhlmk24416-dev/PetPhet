@@ -1,0 +1,29 @@
+<!-- Pricing list. Data: isEmpty, hasServices, services[] {id, name, imageUrl, hasTiers, tiers[], amountText, onBook} -->
+<section id="pet-pricing-page" class="pet-pricing-page">
+  <div class="pet-pricing-heading" data-scroll-reveal="true">
+    <h1>Bảng giá dịch vụ</h1>
+  </div>
+
+  <div data-if="isEmpty" class="pet-pricing-empty">Bảng giá đang được cập nhật. Vui lòng quay lại sau.</div>
+
+  <div data-if="hasServices" class="pet-pricing-list">
+    <article data-for="service in services" data-key="service.id" class="pet-pricing-card" data-scroll-reveal="true">
+      <div class="pet-pricing-service">
+        <h2>{{service.name}}</h2>
+        <img class="pet-pricing-image" src="{{service.imageUrl}}" alt="{{service.name}}" loading="lazy" />
+      </div>
+      <div class="pet-pricing-rate">
+        <span data-if="!service.hasTiers" class="pet-pricing-amount">{{service.amountText}}</span>
+        <div data-if="service.hasTiers" class="pet-pricing-tiers">
+          <div data-for="tier in service.tiers" data-key="tier.id">
+            <span>{{tier.rangeText}}</span>
+            <strong>{{tier.priceText}}</strong>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="pet-button pet-button-primary pet-pricing-book" data-on-click="service.onBook">
+        <i data-icon="CalendarDays" size="17"></i> Đặt lịch
+      </button>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+<!-- Site footer. Data: logoUrl, services[] {id, name, title, onClick}, noServices, highlightClass, openAbout -->
+<footer class="pet-footer bg-[#81451F] text-[#FAF6F0] pt-14 pb-8 border-t-4 border-[#EC802B]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-[#A45C2D]">
+      <!-- Brand & Mascot Bio -->
+      <div class="pet-footer-brand-block space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="{{logoUrl}}" alt="Pet Phết – Pet First" class="pet-footer-logo" />
+        </div>
+
+        <p class="text-xs text-orange-100/90 leading-relaxed font-vietnamese">
+          Spa và chăm sóc thú y tận tâm, yêu thương từng bé cưng.
+        </p>
+
+        <div class="pet-footer-socials flex items-center justify-start gap-2 pt-2" aria-label="Mạng xã hội Pet Phết">
+          <a class="pet-social-icon" href="index.html#" title="Facebook" aria-label="Facebook"><i data-icon="Facebook" size="17" aria-hidden="true"></i></a>
+          <a class="pet-social-icon" href="index.html#" title="Instagram" aria-label="Instagram"><i data-icon="Instagram" size="17" aria-hidden="true"></i></a>
+          <a class="pet-social-icon pet-social-youtube" href="index.html#" title="YouTube" aria-label="YouTube"><i data-icon="Youtube" size="17" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="pet-footer-services-block">
+        <h4 class="text-base font-bold text-[#EDC55B] font-heading mb-4 flex items-center gap-2">
+          <i data-icon="Sparkles" class="w-4 h-4 text-[#EC802B]"></i> Các Dịch vụ
+        </h4>
+        <ul class="pet-footer-services-list space-y-2.5 text-xs text-orange-100/80">
+          <li data-for="service in services" data-key="service.id"><button type="button" data-on-click="service.onClick" class="pet-footer-service-link text-left" title="{{service.title}}">{{service.name}}</button></li>
+          <li data-if="noServices">Danh sách dịch vụ đang được cập nhật.</li>
+        </ul>
+      </div>
+
+      <!-- Working Hours & Commitments -->
+      <div>
+        <h4 class="text-base font-bold text-[#EDC55B] font-heading mb-4 flex items-center gap-2">
+          <i data-icon="Clock" class="w-4 h-4 text-[#66BCB4]"></i> Giờ làm việc &amp; Cam kết
+        </h4>
+        <ul class="space-y-3 text-xs text-orange-100/80">
+          <li class="flex items-start gap-2">
+            <i data-icon="CalendarDays" class="w-4 h-4 text-[#EDC55B] shrink-0 mt-0.5"></i>
+            <span>
+              <strong class="text-white">Thứ 2 – Chủ Nhật:</strong> 08:00 – 20:00
+            </span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i data-icon="Shield" class="w-4 h-4 text-[#66BCB4] shrink-0 mt-0.5"></i>
+            <span>Theo dõi sức khỏe, ưu tiên an toàn</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i data-icon="Award" class="w-4 h-4 text-[#EDC55B] shrink-0 mt-0.5"></i>
+            <span>Tặng 1.000 Pet Point mỗi đánh giá hợp lệ</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact & Address -->
+      <div id="pet-contact-section" class="pet-contact-card {{highlightClass}}">
+        <h4 class="text-base font-bold text-[#EDC55B] font-heading mb-4 flex items-center gap-2">
+          <i data-icon="Phone" class="w-4 h-4 text-[#EC802B]"></i> Liên hệ Pet Phết
+        </h4>
+        <ul class="space-y-2.5 text-xs text-orange-100/80">
+          <li class="flex items-start gap-2">
+            <i data-icon="MapPin" class="w-4 h-4 text-[#EC802B] shrink-0 mt-0.5"></i>
+            <span>123 Đường Thú Cưng Yêu Thương, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-icon="Phone" class="w-4 h-4 text-[#66BCB4] shrink-0"></i>
+            <span>Hotline: <a href="tel:0909123456" class="pet-footer-contact-link">0909.123.456</a></span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i data-icon="Mail" class="w-4 h-4 text-[#EDC55B] shrink-0"></i>
+            <span>Email: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact%40petphet.vn" target="_blank" rel="noopener noreferrer" class="pet-footer-contact-link">contact@petphet.vn</a></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-orange-200/60">
+      <p>© 2026 Pet Phết – Pet First. Tất cả quyền được bảo lưu.</p>
+      <p class="flex items-center gap-2 mt-2 sm:mt-0">
+        <a href="#about" data-on-click="openAbout" class="pet-footer-legal-link">Điều khoản sử dụng</a>
+        <span aria-hidden="true">&amp;</span>
+        <a href="#about" data-on-click="openAbout" class="pet-footer-legal-link">Chính sách bảo mật</a>
+      </p>
+    </div>
+  </div>
+</footer>

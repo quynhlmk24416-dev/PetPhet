@@ -1,0 +1,72 @@
+<!-- About page. Data: onNavigateToBooking, onNavigateToServices, coreValues[] {title, description, number}, principles[] {icon, title, description} -->
+<div class="pet-about-page">
+  <section class="pet-about-intro" data-scroll-reveal="true">
+    <div class="pet-about-copy">
+      <span class="pet-section-kicker">PET PHẾT – PET FIRST</span>
+      <h1>Chăm sóc bé cưng bằng sự dịu dàng và tận tâm.</h1>
+      <div class="pet-about-actions">
+        <button class="pet-button pet-button-primary" data-on-click="onNavigateToBooking">
+          <i data-icon="CalendarDays" size="18"></i> Đặt lịch cho bé
+        </button>
+        <button class="pet-button pet-button-light" data-on-click="onNavigateToServices">
+          <i data-icon="Scissors" size="18"></i> Xem dịch vụ
+        </button>
+      </div>
+    </div>
+    <figure class="pet-about-photo">
+      <img
+        src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+        alt="Chú chó Beagle trong khung cảnh tông màu ấm"
+        loading="eager"
+      />
+    </figure>
+  </section>
+
+  <section class="pet-about-story" aria-label="Tầm nhìn và sứ mệnh" data-scroll-reveal="true">
+    <div class="pet-about-story-goals">
+      <article class="pet-about-goal-mission">
+        <div class="pet-about-goal-heading">
+          <h3>Sứ mệnh</h3>
+          <div class="pet-about-goal-icon"><i data-icon="Target" size="25" aria-hidden="true"></i></div>
+        </div>
+        <p>
+          Giải quyết những bất tiện khi tìm kiếm, lựa chọn và đặt lịch chăm sóc thú cưng bằng một
+          nền tảng trực tuyến tập trung; tiết kiệm thời gian cho chủ nuôi và hỗ trợ cơ sở nâng cao
+          hiệu quả vận hành, trải nghiệm khách hàng.
+        </p>
+      </article>
+      <article class="pet-about-goal-vision">
+        <div class="pet-about-goal-heading">
+          <h3>Tầm nhìn</h3>
+          <div class="pet-about-goal-icon"><i data-icon="Eye" size="25" aria-hidden="true"></i></div>
+        </div>
+        <p>
+          Trở thành nền tảng kết nối và quản lý dịch vụ chăm sóc thú cưng đáng tin cậy tại Việt Nam,
+          thúc đẩy số hóa ngành và xây dựng hệ sinh thái dịch vụ thuận tiện, minh bạch, dễ tiếp cận.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="pet-about-values" aria-labelledby="pet-about-values-title" data-scroll-reveal="true">
+    <h2 id="pet-about-values-title">Giá trị cốt lõi</h2>
+    <div class="pet-about-values-grid">
+      <article data-for="value in coreValues" data-key="value.title">
+        <span class="pet-about-value-number">{{value.number}}</span>
+        <h3>{{value.title}}</h3>
+        <p>{{value.description}}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="pet-about-principles" aria-label="Điều Pet Phết hướng đến" data-scroll-reveal="true">
+    <article data-for="principle in principles" data-key="principle.title">
+      <i data-icon="{{principle.icon}}" size="21" aria-hidden="true"></i>
+      <div>
+        <h2>{{principle.title}}</h2>
+        <p>{{principle.description}}</p>
+      </div>
+    </article>
+  </section>
+
+</div>

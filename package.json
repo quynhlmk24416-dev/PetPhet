@@ -1,0 +1,11 @@
+{
+  "name": "pet-phet-pet-care-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pet Ph\u1ebft static website (HTML + CSS + JavaScript + JSON). No build step required.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/bookingEngine.test.js scripts/store-smoke.test.js scripts/feature-rules.test.js",
+    "build:css": "npx @tailwindcss/cli -i styles/tailwind.input.css -o styles/tailwind.css"
+  }
+}
