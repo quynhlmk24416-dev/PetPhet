@@ -1,0 +1,1522 @@
+# DỰ ÁN: XÂY DỰNG WEBSITE PET PHẾT – PET FIRST
+
+## I. VAI TRÒ VÀ MỤC TIÊU
+
+Bạn là một đội ngũ phát triển phần mềm chuyên nghiệp, bao gồm:
+
+- Business Analyst.
+- System Analyst.
+- UI/UX Designer.
+- Frontend Developer.
+- Backend Developer.
+- Database Engineer.
+- Software Tester.
+
+Nhiệm vụ của bạn là phân tích, thiết kế và xây dựng hoàn chỉnh website Pet Phết – Pet First, một nền tảng hỗ trợ quản lý và cung cấp dịch vụ chăm sóc thú cưng.
+
+Tài liệu nghiệp vụ được cung cấp là cơ sở chính để triển khai hệ thống.
+
+Không tự ý loại bỏ chức năng, thay đổi quy trình nghiệp vụ hoặc thêm các chức năng không có trong tài liệu mà chưa xác định rõ.
+
+Mục tiêu cuối cùng là tạo ra một website có:
+
+1. Giao diện hoàn chỉnh, chuyên nghiệp.
+2. Hai hệ thống giao diện riêng biệt cho Customer và Admin.
+3. Đầy đủ chức năng theo tài liệu.
+4. Cơ sở dữ liệu có quan hệ rõ ràng.
+5. Các luồng nghiệp vụ hoạt động xuyên suốt.
+6. Có phân quyền và bảo mật.
+7. Có khả năng lưu trữ dữ liệu thực tế.
+8. Có khả năng kiểm thử và triển khai.
+
+Đây không phải website giới thiệu đơn thuần mà là một hệ thống quản lý dịch vụ chăm sóc thú cưng.
+
+---
+
+# II. NHẬN DIỆN THƯƠNG HIỆU VÀ THIẾT KẾ GIAO DIỆN
+
+## 1. Thương hiệu
+
+Tên website: Pet Phết.
+
+Slogan: Pet First.
+
+Định vị: Nền tảng cung cấp dịch vụ chăm sóc thú cưng, giúp khách hàng tìm kiếm, đặt lịch và theo dõi quá trình sử dụng dịch vụ.
+
+Phong cách:
+- Thân thiện.
+- Đáng yêu.
+- Hiện đại.
+- Ấm áp.
+- Dễ sử dụng.
+- Có tính thương mại.
+- Không quá trẻ con hoặc rườm rà.
+
+## 2. Bảng màu
+
+Sử dụng đúng bảng màu thương hiệu:
+
+- Màu kem: #E8CCAD.
+- Màu cam: #EC802B.
+- Màu vàng: #EDC55B.
+- Màu xanh ngọc: #66BCB4.
+- Màu nâu: #81451F.
+
+Quy tắc sử dụng:
+- Cam: nút hành động chính, trạng thái nổi bật.
+- Vàng: điểm nhấn và thành phần phụ.
+- Xanh ngọc: trạng thái thành công, thông tin tích cực.
+- Nâu: chữ, tiêu đề và các thành phần nhận diện.
+- Kem: nền chính và nền các khu vực nội dung.
+
+Không tự ý thay đổi màu sắc thương hiệu.
+
+## 3. Font chữ
+
+Sử dụng ba font:
+
+- Nunito.
+- Be Vietnam Pro.
+- Quicksand.
+
+Phân công:
+- Nunito: nội dung và giao diện chung.
+- Be Vietnam Pro: văn bản tiếng Việt.
+- Quicksand: tiêu đề, điểm nhấn và thành phần thương hiệu.
+
+## 4. Hệ thống Mascot
+
+Có hai nhân vật:
+
+CÚN PHẾT:
+- Nhân vật đại diện chính.
+- Chó lông màu cam vàng.
+- Đeo khăn tam giác màu xanh ngọc.
+- Có biểu cảm vui vẻ, thân thiện.
+- Đại diện cho sự năng động và nhiệt tình.
+
+MÈO BÔNG:
+- Nhân vật đại diện phụ.
+- Mèo lông trắng kem.
+- Có vòng cổ màu cam và chuông vàng.
+- Biểu cảm đáng yêu, nhẹ nhàng.
+- Đại diện cho sự dịu dàng và gần gũi.
+
+Sử dụng đúng hình ảnh Mascot đã cung cấp.
+
+Không tạo lại nhân vật bằng AI.
+Không thay đổi màu lông, phụ kiện, hình dáng hoặc nhận diện.
+Không sử dụng các nhân vật thay thế.
+
+## 5. Phân bổ hình ảnh
+
+Các tài nguyên được cung cấp có vai trò:
+
+- Background tổng: sử dụng làm nền chung theo đúng thiết kế đã chỉ định.
+- Background trang khởi đầu: sử dụng cho Landing Page.
+- Background đăng nhập: sử dụng cho giao diện xác thực.
+- Background khách hàng: sử dụng cho các trang thuộc Customer.
+- Các ảnh Mascot riêng: sử dụng trong giao diện, thông báo, trạng thái và các khu vực nội dung.
+- Bộ sticker: sử dụng làm thành phần trang trí và tương tác.
+
+Không sử dụng một background duy nhất cho tất cả các trang nếu tài liệu hình ảnh đã phân công riêng.
+
+Không để hình nền làm giảm độ tương phản của chữ.
+
+## 6. Responsive
+
+Website phải tương thích:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+Không để:
+- Tràn nội dung.
+- Vỡ bảng.
+- Nút bị che.
+- Hình ảnh méo.
+- Sidebar che nội dung.
+- Modal vượt khỏi màn hình.
+
+---
+
+# III. KIẾN TRÚC TỔNG THỂ
+
+## 1. Công nghệ
+
+Sử dụng:
+
+Frontend:
+- React.
+- TypeScript.
+- Vite.
+- HTML5.
+- CSS3.
+- Tailwind CSS hoặc hệ thống CSS hiện có.
+
+Backend:
+- Supabase.
+- PostgreSQL.
+- Supabase Authentication.
+- Supabase Storage.
+- Supabase Row Level Security.
+
+Không thay đổi công nghệ cốt lõi nếu source code hiện tại đã có cấu trúc phù hợp.
+
+## 2. Kiến trúc
+
+Phân chia thành các tầng:
+
+Presentation Layer:
+- Pages.
+- Components.
+- Layouts.
+- UI.
+
+Business Logic Layer:
+- Services.
+- Validators.
+- Business Rules.
+
+Data Access Layer:
+- Supabase Client.
+- Repository.
+- Database Queries.
+
+State Management:
+- Context.
+- Hooks.
+- Authentication State.
+
+Models:
+- User.
+- Pet.
+- Service.
+- Booking.
+- Payment.
+- Review.
+- Schedule.
+
+Không viết toàn bộ logic vào App.tsx.
+
+Không để component giao diện trực tiếp xử lý các nghiệp vụ phức tạp.
+
+## 3. Cấu trúc thư mục định hướng
+
+src/
+│
+├── assets/
+│   ├── images/
+│   ├── mascot/
+│   ├── backgrounds/
+│   └── stickers/
+│
+├── components/
+│   ├── common/
+│   ├── layout/
+│   ├── auth/
+│   ├── customer/
+│   ├── admin/
+│   ├── booking/
+│   ├── services/
+│   └── mascot/
+│
+├── pages/
+│   ├── landing/
+│   ├── auth/
+│   ├── customer/
+│   └── admin/
+│
+├── models/
+│
+├── services/
+│
+├── repositories/
+│
+├── context/
+│
+├── hooks/
+│
+├── types/
+│
+├── utils/
+│
+├── validators/
+│
+├── routes/
+│
+└── styles/
+
+database/
+├── schema.sql
+├── migrations/
+├── seed.sql
+└── policies.sql
+
+public/
+└── assets/
+
+Cấu trúc này là định hướng. Có thể điều chỉnh để phù hợp với source code hiện tại nhưng phải giữ được sự phân tách trách nhiệm.
+
+---
+
+# IV. CÁC VAI TRÒ TRONG HỆ THỐNG
+
+Có hai vai trò chính:
+
+1. Customer.
+2. Admin.
+
+## 1. Customer
+
+Customer được phép:
+
+- Đăng ký, đăng nhập.
+- Quản lý tài khoản.
+- Tìm kiếm dịch vụ.
+- Xem chi tiết dịch vụ.
+- Quản lý hồ sơ thú cưng.
+- Đặt lịch.
+- Thanh toán.
+- Xem lịch sử đặt lịch.
+- Chỉnh sửa lịch.
+- Hủy lịch theo điều kiện.
+- Đánh giá dịch vụ.
+- Nhận Pet Point.
+- Xem lịch sử điểm.
+
+Customer không được:
+- Quản lý dịch vụ.
+- Thay đổi bảng giá.
+- Quản lý lịch làm việc.
+- Xác nhận thanh toán thay Admin.
+- Truy cập Dashboard Admin.
+- Xem dữ liệu khách hàng khác.
+
+## 2. Admin
+
+Admin được phép:
+
+- Quản lý tài khoản theo phạm vi quản trị.
+- Quản lý dịch vụ.
+- Quản lý danh mục.
+- Quản lý giá.
+- Quản lý lịch làm việc.
+- Quản lý sức chứa.
+- Quản lý booking.
+- Xác nhận hoặc từ chối booking.
+- Cập nhật trạng thái phục vụ.
+- Đối chiếu thanh toán.
+- Quản lý đánh giá.
+- Phản hồi đánh giá.
+- Xem báo cáo thống kê.
+- Xem thông tin khách hàng và thú cưng phục vụ nghiệp vụ.
+
+Không cho phép Customer tự thay đổi role thành Admin.
+
+Phân quyền phải được kiểm tra cả ở Frontend và Database.
+
+---
+
+# V. CHỨC NĂNG CUSTOMER
+
+## MODULE 1. LANDING PAGE
+
+Xây dựng trang khởi đầu của Pet Phết.
+
+Các thành phần:
+
+1. Header:
+- Logo Pet Phết.
+- Menu Trang chủ.
+- Dịch vụ.
+- Bảng giá.
+- Giới thiệu.
+- Liên hệ.
+- Đăng nhập.
+- Đăng ký.
+
+2. Hero Section:
+- Background theo tài nguyên được cung cấp.
+- Cún Phết và Mèo Bông.
+- Thông điệp thương hiệu.
+- Nút Khám phá dịch vụ.
+- Nút Đặt lịch.
+
+3. Giới thiệu dịch vụ:
+- Spa và Grooming.
+- Tắm gội.
+- Cắt tỉa.
+- Khám thú y.
+- Chích vaccine.
+- Triệt sản.
+- Các dịch vụ khác theo danh mục thực tế.
+
+4. Giới thiệu Mascot.
+
+5. Dịch vụ nổi bật.
+
+6. Quy trình đặt lịch.
+
+7. Đánh giá khách hàng.
+
+8. Footer:
+- Thông tin thương hiệu.
+- Thông tin liên hệ.
+- Chính sách.
+- Liên kết mạng xã hội.
+
+Dữ liệu dịch vụ phải lấy từ database.
+
+Không cố định danh sách dịch vụ trong code.
+
+## MODULE 2. ĐĂNG KÝ – ĐĂNG NHẬP
+
+### Đăng ký
+
+Biểu mẫu:
+- Họ tên.
+- Email.
+- Số điện thoại.
+- Mật khẩu.
+- Xác nhận mật khẩu.
+
+Quy trình:
+
+1. Khách truy cập trang đăng ký.
+2. Nhập thông tin.
+3. Hệ thống kiểm tra dữ liệu.
+4. Kiểm tra email trùng.
+5. Kiểm tra số điện thoại và định dạng.
+6. Tạo tài khoản.
+7. Lưu profile.
+8. Thông báo đăng ký thành công.
+
+Nếu có lỗi phải hiển thị tại trường tương ứng.
+
+### Đăng nhập
+
+- Email.
+- Mật khẩu.
+- Ghi nhớ phiên đăng nhập.
+- Quên mật khẩu.
+- Đăng nhập Google.
+
+Sau khi xác thực:
+- Customer chuyển đến giao diện khách hàng.
+- Admin chuyển đến Dashboard Admin.
+
+### Khôi phục mật khẩu
+
+Triển khai quy trình xác minh email theo tài liệu:
+
+1. Nhập email.
+2. Gửi OTP.
+3. Nhập OTP.
+4. Xác thực OTP.
+5. Nhập mật khẩu mới.
+6. Xác nhận mật khẩu.
+7. Cập nhật mật khẩu.
+8. Thông báo thành công.
+
+Nếu sử dụng Supabase, triển khai cơ chế xác minh tương đương một cách an toàn. Không tự xây dựng OTP thiếu kiểm soát.
+
+### Quản lý phiên
+
+- Tự khôi phục phiên.
+- Đăng xuất.
+- Hết hạn phiên.
+- Chặn truy cập trái phép.
+
+## MODULE 3. QUẢN LÝ TÀI KHOẢN
+
+Cho phép Customer:
+
+- Xem thông tin cá nhân.
+- Chỉnh sửa họ tên.
+- Chỉnh sửa email theo quy trình xác minh.
+- Chỉnh sửa số điện thoại.
+- Thay đổi mật khẩu.
+- Cài đặt thông báo.
+- Đăng xuất.
+
+Không cho thay đổi role.
+
+Không cho sửa thông tin người dùng khác.
+
+## MODULE 4. TÌM KIẾM VÀ XEM CHI TIẾT DỊCH VỤ
+
+Trang danh sách dịch vụ:
+
+- Tìm kiếm theo từ khóa.
+- Lọc theo danh mục.
+- Lọc theo khoảng giá.
+- Hiển thị hình ảnh.
+- Hiển thị tên dịch vụ.
+- Hiển thị giá.
+- Hiển thị thời lượng.
+- Hiển thị đánh giá.
+
+Trang chi tiết dịch vụ:
+
+- Tên.
+- Hình ảnh.
+- Mô tả.
+- Danh mục.
+- Giá.
+- Thời lượng.
+- Loài thú cưng được nhận.
+- Đánh giá trung bình.
+- Danh sách đánh giá.
+- Nút Đặt lịch.
+
+Quy tắc:
+
+- Chỉ hiển thị dịch vụ đang hoạt động.
+- Không hiển thị dịch vụ đã ẩn.
+- Nếu không có kết quả tìm kiếm, hiển thị thông báo.
+- Nếu chưa có đánh giá, hiển thị Chưa có đánh giá.
+
+Giá hiển thị cần phân biệt:
+
+- Dịch vụ spa: giá phụ thuộc cân nặng.
+- Dịch vụ thú y: phí khám ban đầu, chưa bao gồm xét nghiệm và điều trị phát sinh.
+
+Không tự tạo mức giá nghiệp vụ khi chưa có bảng giá được cung cấp.
+
+## MODULE 5. QUẢN LÝ HỒ SƠ THÚ CƯNG
+
+Một tài khoản có thể có nhiều thú cưng.
+
+Thông tin:
+
+- Tên thú cưng.
+- Loài.
+- Giống.
+- Giới tính.
+- Ngày sinh.
+- Cân nặng.
+- Tình trạng sức khỏe do chủ nuôi cung cấp.
+- Lịch sử tiêm phòng do chủ nuôi cung cấp.
+- Ghi chú.
+- Ảnh đại diện.
+
+Chức năng:
+
+1. Thêm hồ sơ.
+2. Xem hồ sơ.
+3. Chỉnh sửa.
+4. Ẩn hồ sơ.
+
+Quy tắc:
+
+- Tên và loài là bắt buộc.
+- Giới tính có giá trị Chưa xác định.
+- Cân nặng phải lớn hơn 0 nếu được nhập.
+- Năm sinh không được lớn hơn năm hiện tại.
+- Mỗi hồ sơ thuộc một tài khoản.
+- Không cho truy cập hồ sơ người khác.
+- Không cho ẩn hồ sơ khi còn booking đang xử lý.
+- Nếu chỉ còn lịch sử giao dịch, được phép ẩn hồ sơ.
+- Lịch sử cũ vẫn phải truy xuất được.
+
+Cân nặng cần lưu kèm thời điểm cập nhật.
+
+Khi đặt lịch, khách phải xác nhận lại cân nặng nếu dịch vụ cần tính giá theo cân nặng.
+
+Lưu ý: Hệ thống không tự tạo chẩn đoán hoặc kết quả khám thú y. Lịch sử dịch vụ được tổng hợp từ booking đã hoàn thành.
+
+## MODULE 6. ĐẶT LỊCH DỊCH VỤ
+
+Đây là một trong những nghiệp vụ quan trọng nhất.
+
+Thiết kế quy trình đặt lịch theo từng bước.
+
+### Bước 1: Chọn dịch vụ
+
+- Kiểm tra dịch vụ đang hoạt động.
+- Hiển thị thông tin dịch vụ.
+- Hiển thị thời lượng.
+- Hiển thị điều kiện tiếp nhận.
+
+### Bước 2: Chọn thú cưng
+
+- Lấy danh sách thú cưng của Customer.
+- Kiểm tra quyền sở hữu.
+- Kiểm tra loài có phù hợp với dịch vụ.
+- Nếu chưa có hồ sơ, chuyển sang tạo hồ sơ.
+- Nếu cần cân nặng, yêu cầu xác nhận.
+
+### Bước 3: Chọn ngày và giờ
+
+Hệ thống lấy lịch làm việc từ database.
+
+Kiểm tra:
+
+- Ngày có hoạt động.
+- Giờ mở cửa.
+- Giờ đóng cửa.
+- Ngày nghỉ.
+- Khung giờ khả dụng.
+- Sức chứa.
+- Số nhân viên hoặc số chỗ phục vụ đồng thời.
+- Thời lượng dịch vụ.
+- Các booking đã được xác nhận hoặc đang giữ chỗ.
+
+Không chỉ kiểm tra thời điểm bắt đầu.
+
+Phải kiểm tra toàn bộ khoảng thời gian thực hiện dịch vụ.
+
+Ví dụ:
+Dịch vụ kéo dài 90 phút, bắt đầu 09:00 thì cần kiểm tra khoảng 09:00–10:30.
+
+Không cho phép vượt quá năng lực phục vụ trong bất kỳ thời điểm nào của khoảng thời gian đó.
+
+### Bước 4: Thông tin xác nhận
+
+Hiển thị:
+
+- Khách hàng.
+- Thú cưng.
+- Dịch vụ.
+- Cân nặng.
+- Ngày.
+- Giờ.
+- Thời lượng.
+- Giá tạm tính.
+- Mã giảm giá.
+- Phương thức thanh toán.
+- Ghi chú.
+
+### Bước 5: Xác nhận đặt lịch
+
+Khi Customer xác nhận:
+
+1. Kiểm tra lại dịch vụ.
+2. Kiểm tra hồ sơ thú cưng.
+3. Kiểm tra quyền sở hữu.
+4. Tính lại giá.
+5. Kiểm tra khung giờ.
+6. Kiểm tra sức chứa.
+7. Áp dụng mã giảm giá.
+8. Tạo booking.
+9. Giữ chỗ.
+10. Tạo payment tương ứng.
+
+Các thao tác quan trọng phải được thực hiện an toàn trong Database, tránh tình trạng hai khách cùng đặt một chỗ cuối cùng.
+
+Booking mới có:
+- Trạng thái: Chờ xác nhận.
+- Thanh toán: Chưa thanh toán.
+
+COD: chờ cơ sở xác nhận.
+
+QR: chuyển sang bước thanh toán và hiển thị thời hạn thanh toán.
+
+Nếu hết chỗ trong lúc xác nhận:
+- Không tạo booking.
+- Không trừ sức chứa.
+- Thông báo cho khách.
+- Giữ lại thông tin đã nhập để chọn giờ khác.
+
+Nếu khách hủy biểu mẫu:
+- Không tạo booking.
+- Không giữ chỗ.
+
+### Thời hạn giữ chỗ
+
+Thiết kế cơ chế giữ chỗ tạm thời trong vài phút theo cấu hình.
+
+Thời hạn phải được Admin hoặc cấu hình hệ thống kiểm soát.
+
+Khi hết thời hạn mà chưa thanh toán:
+- Giải phóng chỗ theo quy tắc.
+- Cập nhật trạng thái phù hợp.
+- Không giữ chỗ vô thời hạn.
+
+## MODULE 7. THANH TOÁN
+
+Có hai phương thức:
+
+### COD
+
+- Khách chọn COD.
+- Tạo giao dịch.
+- Trạng thái ban đầu là Chưa thanh toán.
+- Thanh toán trực tiếp khi sử dụng dịch vụ.
+- Admin xác nhận đã nhận tiền.
+- Cập nhật trạng thái giao dịch.
+
+### QR
+
+- Hiển thị mã QR.
+- Hiển thị số tiền.
+- Hiển thị nội dung chuyển khoản.
+- Hiển thị mã tham chiếu booking.
+- Hiển thị thời hạn thanh toán.
+- Tiếp nhận kết quả giao dịch.
+
+Chỉ ghi nhận đã thanh toán khi có kết quả xác thực từ cổng thanh toán hoặc Admin đối chiếu thủ công.
+
+Không được mặc định thanh toán thành công chỉ vì khách nhấn nút Đã chuyển khoản.
+
+Nếu chưa tích hợp cổng thanh toán thực tế:
+- Xây dựng giao diện QR.
+- Cho phép cấu hình thông tin tài khoản.
+- Cho phép Admin xác nhận giao dịch thủ công.
+- Phải ghi rõ trạng thái là chờ đối chiếu.
+- Không giả lập giao dịch thực.
+
+### Mã giảm giá
+
+Khách được nhập mã giảm giá.
+
+Hệ thống kiểm tra:
+- Mã có tồn tại.
+- Còn hiệu lực.
+- Đủ điều kiện sử dụng.
+- Giá trị đơn hàng đáp ứng điều kiện.
+- Mã chưa vượt giới hạn sử dụng.
+- Mã có áp dụng cho dịch vụ được chọn không.
+
+Tính tổng tiền:
+
+Tổng tiền = Giá dịch vụ - Giá trị giảm giá.
+
+Không cho tổng tiền âm.
+
+Các khoản phát sinh của dịch vụ thú y phải được xử lý riêng theo xác nhận thực tế của cơ sở.
+
+## MODULE 8. LỊCH SỬ ĐẶT LỊCH
+
+Customer xem:
+
+- Mã booking.
+- Dịch vụ.
+- Thú cưng.
+- Ngày giờ.
+- Giá.
+- Phương thức thanh toán.
+- Trạng thái booking.
+- Trạng thái thanh toán.
+
+Cho phép:
+- Tìm kiếm.
+- Lọc theo trạng thái.
+- Xem chi tiết.
+- Chỉnh sửa lịch theo điều kiện.
+- Hủy lịch theo điều kiện.
+- Đánh giá nếu đủ điều kiện.
+
+### Chỉnh sửa booking
+
+Kiểm tra:
+- Booking thuộc khách.
+- Booking còn trạng thái cho phép sửa.
+- Ngày giờ mới hợp lệ.
+- Còn sức chứa.
+- Không trùng lịch.
+- Dịch vụ vẫn hoạt động.
+
+Nếu hợp lệ:
+- Cập nhật lịch.
+- Giải phóng lịch cũ.
+- Giữ lịch mới.
+- Lưu lịch sử thay đổi.
+
+### Hủy booking
+
+Kiểm tra điều kiện hủy.
+
+Không cho hủy booking đã hoàn thành.
+
+Nếu được phép:
+- Chuyển sang Đã hủy.
+- Giải phóng sức chứa.
+- Xử lý giao dịch nếu có.
+- Lưu lý do hủy.
+- Lưu thời gian hủy.
+
+Không tự ý hủy các booking không đáp ứng điều kiện.
+
+## MODULE 9. ĐÁNH GIÁ DỊCH VỤ
+
+Chỉ cho phép đánh giá khi:
+
+- Khách đã đăng nhập.
+- Booking thuộc khách.
+- Booking đã Hoàn thành.
+- Booking chưa được đánh giá.
+
+Thông tin:
+
+- Điểm đánh giá từ 1–5 sao.
+- Nội dung nhận xét.
+- Hình ảnh đính kèm nếu có.
+
+Cho phép:
+- Tạo đánh giá.
+- Xem đánh giá.
+- Sửa đánh giá.
+- Xóa đánh giá theo quy định.
+
+Mỗi booking chỉ có một đánh giá.
+
+Sau khi đánh giá hợp lệ:
+- Cộng 1.000 Pet Point.
+- Ghi nhận giao dịch điểm.
+- Không cộng trùng khi sửa đánh giá.
+- Không cộng trùng khi gửi lại yêu cầu.
+
+Admin có thể xem và phản hồi đánh giá.
+
+## MODULE 10. PET POINT
+
+Triển khai theo quy tắc được mô tả trong tài liệu:
+
+Khách nhận 1.000 Pet Point khi gửi đánh giá hợp lệ.
+
+Yêu cầu:
+- Có số dư điểm.
+- Có lịch sử giao dịch điểm.
+- Có thời gian phát sinh.
+- Có nguồn phát sinh.
+- Chống cộng điểm trùng.
+
+Không tự thêm quy tắc đổi điểm hoặc quy đổi tiền khi chưa có quy định trong tài liệu.
+
+---
+
+# VI. HỆ THỐNG ADMIN
+
+Admin phải có một giao diện riêng, không sử dụng nguyên giao diện Customer.
+
+Thiết kế Dashboard quản trị chuyên nghiệp.
+
+## MODULE 1. ADMIN DASHBOARD
+
+Hiển thị:
+
+- Tổng số khách hàng.
+- Tổng số thú cưng.
+- Tổng số dịch vụ.
+- Tổng số booking.
+- Booking chờ xác nhận.
+- Booking đã xác nhận.
+- Booking hoàn thành.
+- Booking đã hủy.
+- Tổng tiền thanh toán đã xác nhận.
+- Các thống kê theo thời gian.
+
+Dữ liệu phải lấy từ Database.
+
+Không sử dụng số liệu giả để thay thế.
+
+Có bộ lọc:
+- Hôm nay.
+- 7 ngày.
+- 30 ngày.
+- Khoảng thời gian tùy chọn.
+
+## MODULE 2. QUẢN LÝ DỊCH VỤ
+
+CRUD:
+
+- Thêm.
+- Xem.
+- Sửa.
+- Ẩn hoặc xóa theo điều kiện.
+
+Thông tin:
+
+- Tên dịch vụ.
+- Danh mục.
+- Mô tả.
+- Hình ảnh.
+- Giá.
+- Thời lượng.
+- Loài được tiếp nhận.
+- Trạng thái hoạt động.
+
+Kiểm tra dữ liệu đầu vào.
+
+Không cho xóa cứng dịch vụ có lịch sử booking liên quan.
+
+Ưu tiên ẩn dịch vụ.
+
+## MODULE 3. QUẢN LÝ DANH MỤC
+
+Admin được:
+
+- Thêm danh mục.
+- Sửa danh mục.
+- Ẩn danh mục.
+- Xem các dịch vụ thuộc danh mục.
+
+Không cho xóa danh mục khi còn dịch vụ đang sử dụng nếu chưa xử lý quan hệ dữ liệu.
+
+## MODULE 4. QUẢN LÝ BẢNG GIÁ
+
+Đặc biệt quan trọng với dịch vụ spa.
+
+Admin có thể:
+- Thiết lập khoảng cân nặng.
+- Thiết lập giá tương ứng.
+- Chỉnh sửa giá.
+- Thêm khoảng cân nặng.
+- Xóa khoảng cân nặng.
+
+Kiểm tra:
+- Khoảng cân nặng không âm.
+- Không chồng lấn.
+- Không trùng.
+- Không có khoảng giá bất hợp lệ.
+
+Khi thay đổi giá:
+- Booking mới áp dụng giá mới.
+- Booking cũ giữ giá tại thời điểm đặt.
+
+Đối với dịch vụ thú y, hiển thị phí khám ban đầu và xử lý chi phí phát sinh riêng theo xác nhận.
+
+## MODULE 5. QUẢN LÝ LỊCH LÀM VIỆC
+
+Admin được:
+
+- Thiết lập ngày hoạt động.
+- Thiết lập giờ mở cửa.
+- Thiết lập giờ đóng cửa.
+- Thiết lập ngày nghỉ.
+- Khóa lịch.
+- Mở lại lịch.
+- Cấu hình số nhân viên.
+- Cấu hình sức chứa đồng thời.
+- Cấu hình giới hạn lượt phục vụ mỗi ngày.
+
+Khi thay đổi lịch:
+- Kiểm tra booking đã tồn tại.
+- Cảnh báo xung đột.
+- Không tự ý xóa lịch hẹn đã xác nhận.
+
+## MODULE 6. QUẢN LÝ BOOKING
+
+Hiển thị:
+
+- Mã booking.
+- Khách hàng.
+- Thú cưng.
+- Dịch vụ.
+- Ngày giờ.
+- Giá.
+- Phương thức thanh toán.
+- Trạng thái booking.
+- Trạng thái thanh toán.
+
+Cho phép:
+- Tìm kiếm.
+- Lọc theo ngày.
+- Lọc theo trạng thái.
+- Lọc theo dịch vụ.
+- Xem chi tiết.
+- Xác nhận.
+- Từ chối.
+- Cập nhật trạng thái phục vụ.
+
+Các trạng thái nghiệp vụ:
+
+- Chưa thanh toán.
+- Đã thanh toán.
+- Đã xác nhận.
+- Hoàn thành.
+- Đã hủy.
+- Khách vắng.
+
+Lưu ý: Đây là các trạng thái được mô tả trong tài liệu. Khi triển khai database, cần tách trạng thái booking và trạng thái payment thành hai trường riêng để tránh nhầm lẫn.
+
+Quy tắc:
+- Không cho chuyển trạng thái tùy tiện.
+- Không cho hoàn thành booking đã hủy.
+- Không cho xác nhận booking không còn hợp lệ.
+- Không cho đánh dấu thanh toán thành công khi chưa có căn cứ.
+- Lưu lịch sử thao tác Admin.
+
+## MODULE 7. QUẢN LÝ KHÁCH HÀNG VÀ THÚ CƯNG
+
+Admin được xem:
+- Danh sách khách hàng.
+- Thông tin tài khoản.
+- Số điện thoại.
+- Email.
+- Danh sách thú cưng.
+- Lịch sử booking.
+
+Không cho phép xem hoặc sửa mật khẩu.
+
+Không được thay đổi dữ liệu cá nhân một cách tùy tiện.
+
+## MODULE 8. QUẢN LÝ ĐÁNH GIÁ
+
+Admin có thể:
+
+- Xem danh sách đánh giá.
+- Lọc theo số sao.
+- Lọc theo dịch vụ.
+- Xem thông tin booking liên quan.
+- Xem nội dung và hình ảnh.
+- Phản hồi đánh giá.
+
+Không tự ý sửa nội dung đánh giá của khách.
+
+---
+
+# VII. THIẾT KẾ CƠ SỞ DỮ LIỆU
+
+Sử dụng PostgreSQL trên Supabase.
+
+Tài liệu thiết kế dữ liệu ban đầu gồm các bảng:
+
+1. USERS.
+2. PETS.
+3. SERVICE_CATEGORIES.
+4. SERVICES.
+5. SERVICE_IMAGES.
+6. WORKING_SCHEDULES.
+7. TIME_SLOTS.
+8. BOOKINGS.
+9. PAYMENTS.
+10. REVIEWS.
+
+Phải giữ đầy đủ các quan hệ nghiệp vụ đã xác định.
+
+Có thể bổ sung bảng hỗ trợ nếu thực sự cần để triển khai đầy đủ chức năng, chẳng hạn:
+
+- Service_Pricing.
+- Booking_History.
+- Coupons.
+- Coupon_Usages.
+- Notifications.
+- Loyalty_Transactions.
+- Business_Settings.
+
+Tuy nhiên, không được tự ý làm thay đổi ý nghĩa của các bảng đã có.
+
+## 1. USERS / PROFILES
+
+Quản lý tài khoản.
+
+Thông tin:
+- user_id.
+- full_name.
+- email.
+- phone.
+- role.
+- created_at.
+
+Nếu sử dụng Supabase Auth, liên kết profile với auth.users bằng UUID.
+
+Không lưu mật khẩu dạng văn bản.
+
+## 2. PETS
+
+- pet_id.
+- user_id.
+- pet_name.
+- species.
+- breed.
+- gender.
+- birth_date.
+- weight.
+- notes.
+- is_active.
+- created_at.
+- updated_at.
+
+## 3. SERVICE_CATEGORIES
+
+- category_id.
+- category_name.
+- description.
+
+## 4. SERVICES
+
+- service_id.
+- category_id.
+- service_name.
+- description.
+- price.
+- duration_minutes.
+- species_supported.
+- is_active.
+
+## 5. SERVICE_IMAGES
+
+- image_id.
+- service_id.
+- image_url.
+
+## 6. WORKING_SCHEDULES
+
+- schedule_id.
+- work_date.
+- start_time.
+- end_time.
+- is_available.
+
+Bổ sung cấu hình sức chứa phù hợp với nghiệp vụ.
+
+## 7. TIME_SLOTS
+
+- slot_id.
+- schedule_id.
+- start_time.
+- end_time.
+- status.
+
+Phải bảo đảm quan hệ với lịch làm việc.
+
+## 8. BOOKINGS
+
+- booking_id.
+- user_id.
+- pet_id.
+- service_id.
+- slot_id hoặc thông tin thời gian đặt tương ứng.
+- booking_date.
+- total_amount.
+- status.
+- customer_note.
+
+Bổ sung dữ liệu snapshot cần thiết:
+- Cân nặng tại thời điểm đặt.
+- Giá tại thời điểm đặt.
+- Thời lượng tại thời điểm đặt.
+- Mã giảm giá nếu có.
+- Thời gian giữ chỗ nếu có.
+
+Kiểm tra pet_id thuộc user_id tương ứng.
+
+## 9. PAYMENTS
+
+- payment_id.
+- booking_id.
+- amount.
+- payment_method.
+- payment_status.
+- transaction_reference.
+- created_at.
+- updated_at.
+
+## 10. REVIEWS
+
+- review_id.
+- booking_id.
+- user_id.
+- rating.
+- comment.
+- created_at.
+- updated_at.
+
+Một booking chỉ có tối đa một review.
+
+## 11. Các bảng hỗ trợ
+
+Thiết kế bổ sung khi cần:
+
+- Bảng lưu giá theo cân nặng.
+- Bảng mã giảm giá.
+- Bảng lịch sử trạng thái booking.
+- Bảng Pet Point.
+- Bảng thông báo.
+- Bảng lịch sử thanh toán.
+
+Mọi bảng phải có:
+- Primary Key.
+- Foreign Key.
+- Unique Constraint phù hợp.
+- Check Constraint phù hợp.
+- Index cho các trường truy vấn thường xuyên.
+
+Phải cung cấp:
+- schema.sql.
+- migration.
+- seed.sql.
+- RLS policies.
+
+Không xóa dữ liệu cũ khi cập nhật cấu trúc.
+
+---
+
+# VIII. BẢO MẬT VÀ PHÂN QUYỀN
+
+Thiết lập Supabase RLS.
+
+Customer:
+- Chỉ xem profile của mình.
+- Chỉ xem và sửa pet của mình.
+- Chỉ xem booking của mình.
+- Chỉ xem payment liên quan booking của mình.
+- Chỉ tạo review cho booking của mình.
+- Không được thay đổi role.
+
+Admin:
+- Được truy cập dữ liệu quản trị theo quyền được cấp.
+
+Không sử dụng việc ẩn nút trên giao diện làm cơ chế bảo mật duy nhất.
+
+Không đưa Service Role Key lên Frontend.
+
+Không lưu mật khẩu trong LocalStorage.
+
+Không tin tưởng giá, user_id, role hoặc payment_status do Frontend tự gửi lên mà chưa kiểm tra ở phía server/database.
+
+---
+
+# IX. HỆ THỐNG THÔNG BÁO
+
+Xây dựng thông báo cho các sự kiện:
+
+Customer:
+- Đăng ký thành công.
+- Đặt lịch thành công.
+- Lịch được xác nhận.
+- Lịch bị từ chối.
+- Thanh toán thành công.
+- Thanh toán thất bại.
+- Lịch bị hủy.
+- Đánh giá thành công.
+- Nhận Pet Point.
+
+Admin:
+- Có booking mới.
+- Có yêu cầu hủy.
+- Có thanh toán chờ đối chiếu.
+- Có đánh giá mới.
+
+Thông báo có:
+- Nội dung.
+- Thời gian.
+- Trạng thái đã đọc/chưa đọc.
+
+Sử dụng Cún Phết và Mèo Bông trong các thông báo phù hợp.
+
+---
+
+# X. CHATBOT VÀ HỖ TRỢ KHÁCH HÀNG
+
+Nếu hệ thống hiện tại đã có giao diện chatbot, tiếp tục hoàn thiện.
+
+Chatbot có thể hỗ trợ:
+- Giới thiệu dịch vụ.
+- Hướng dẫn đặt lịch.
+- Hướng dẫn thanh toán.
+- Tra cứu thông tin dịch vụ.
+- Hướng dẫn quản lý hồ sơ thú cưng.
+- Giải đáp câu hỏi thường gặp.
+
+Không tự ý cung cấp kết quả chẩn đoán thú y.
+
+Không được tự xác nhận booking hoặc thanh toán thay hệ thống.
+
+Các thông tin về giá và dịch vụ phải lấy từ dữ liệu thực tế.
+
+Sử dụng Mascot Mèo Bông hoặc Cún Phết làm nhân vật hỗ trợ.
+
+---
+
+# XI. CÁC LUỒNG NGHIỆP VỤ END-TO-END
+
+Phải kiểm tra các chuỗi nghiệp vụ sau:
+
+LUỒNG 1: ĐĂNG KÝ
+
+Guest
+→ Nhập thông tin
+→ Kiểm tra dữ liệu
+→ Kiểm tra email
+→ Tạo tài khoản
+→ Lưu profile
+→ Thông báo thành công.
+
+LUỒNG 2: ĐĂNG NHẬP
+
+Người dùng
+→ Nhập email và mật khẩu
+→ Xác thực
+→ Kiểm tra role
+→ Thiết lập phiên
+→ Điều hướng Customer hoặc Admin.
+
+LUỒNG 3: ĐẶT LỊCH
+
+Customer
+→ Chọn dịch vụ
+→ Chọn thú cưng
+→ Kiểm tra loài
+→ Xác nhận cân nặng
+→ Tính giá
+→ Chọn ngày
+→ Kiểm tra lịch
+→ Chọn giờ
+→ Nhập mã giảm giá
+→ Chọn COD hoặc QR
+→ Xác nhận
+→ Kiểm tra lại dữ liệu
+→ Giữ chỗ
+→ Tạo booking
+→ Thông báo kết quả.
+
+LUỒNG 4: THANH TOÁN
+
+Booking
+→ Kiểm tra tổng tiền
+→ Chọn phương thức
+→ COD hoặc QR
+→ Tiếp nhận kết quả
+→ Xác thực giao dịch
+→ Cập nhật payment
+→ Thông báo kết quả.
+
+LUỒNG 5: ADMIN XỬ LÝ BOOKING
+
+Admin
+→ Đăng nhập
+→ Mở quản lý booking
+→ Tìm kiếm
+→ Xem chi tiết
+→ Xác nhận hoặc từ chối
+→ Cập nhật trạng thái phục vụ
+→ Hoàn thành
+→ Lưu dữ liệu.
+
+LUỒNG 6: ĐÁNH GIÁ
+
+Customer
+→ Mở lịch sử
+→ Chọn booking hoàn thành
+→ Kiểm tra quyền
+→ Nhập số sao
+→ Nhập nhận xét
+→ Đính kèm hình ảnh
+→ Gửi
+→ Kiểm tra
+→ Lưu review
+→ Cộng 1.000 Pet Point
+→ Thông báo.
+
+LUỒNG 7: CHỈNH SỬA LỊCH
+
+Customer
+→ Mở lịch sử
+→ Chọn booking
+→ Kiểm tra trạng thái
+→ Chọn ngày giờ mới
+→ Kiểm tra sức chứa
+→ Cập nhật lịch
+→ Giải phóng lịch cũ
+→ Giữ lịch mới
+→ Thông báo.
+
+LUỒNG 8: HỦY LỊCH
+
+Customer
+→ Chọn booking
+→ Yêu cầu hủy
+→ Kiểm tra điều kiện
+→ Nếu hợp lệ: hủy và giải phóng chỗ
+→ Nếu không hợp lệ: thông báo lý do.
+
+---
+
+# XII. QUY TẮC KIỂM THỬ
+
+Không được đánh giá một chức năng là hoàn thành chỉ vì đã có giao diện.
+
+Kiểm thử thực tế:
+
+1. Đăng ký tài khoản.
+2. Email trùng.
+3. Đăng nhập sai.
+4. Khôi phục mật khẩu.
+5. Phân quyền Customer.
+6. Phân quyền Admin.
+7. Thêm thú cưng.
+8. Sửa thú cưng.
+9. Ẩn thú cưng.
+10. Tìm kiếm dịch vụ.
+11. Lọc dịch vụ.
+12. Xem chi tiết.
+13. Tính giá theo cân nặng.
+14. Đặt lịch hợp lệ.
+15. Đặt lịch hết chỗ.
+16. Đặt lịch ngoài giờ.
+17. Đặt dịch vụ sai loài.
+18. Hai khách cùng đặt chỗ cuối cùng.
+19. Áp dụng mã giảm giá.
+20. Thanh toán COD.
+21. Thanh toán QR.
+22. Thanh toán thất bại.
+23. Admin xác nhận thanh toán.
+24. Chỉnh sửa booking.
+25. Hủy booking.
+26. Đánh giá booking hoàn thành.
+27. Đánh giá booking chưa hoàn thành.
+28. Cộng Pet Point.
+29. Chống cộng điểm trùng.
+30. Admin CRUD dịch vụ.
+31. Admin quản lý giá.
+32. Admin quản lý lịch.
+33. Admin xử lý booking.
+34. Admin xem đánh giá.
+35. Kiểm tra dữ liệu sau khi tải lại website.
+
+---
+
+# XIII. YÊU CẦU VỀ CHẤT LƯỢNG CODE
+
+- Không viết code trùng lặp.
+- Không để các component quá lớn.
+- Không dùng dữ liệu mẫu thay cho dữ liệu thực.
+- Không dùng alert() để giả lập nghiệp vụ.
+- Không để nút bấm không có chức năng.
+- Không bỏ qua xử lý lỗi.
+- Không lưu trạng thái quan trọng chỉ trong Frontend.
+- Không để dữ liệu booking và payment sai lệch.
+- Có loading state.
+- Có empty state.
+- Có error state.
+- Có success state.
+- Có validation.
+- Có kiểm tra quyền.
+- Có logging phù hợp.
+
+Phải kiểm tra:
+- TypeScript.
+- Build.
+- Console.
+- API.
+- Database.
+- RLS.
+- Responsive.
+
+---
+
+# XIV. QUY TRÌNH TRIỂN KHAI
+
+Không triển khai một cách tùy tiện.
+
+Thực hiện theo các giai đoạn:
+
+GIAI ĐOẠN 1:
+Phân tích tài liệu, cấu trúc dự án, xác định toàn bộ màn hình, component, database và luồng nghiệp vụ.
+
+GIAI ĐOẠN 2:
+Thiết kế kiến trúc và cơ sở dữ liệu.
+
+GIAI ĐOẠN 3:
+Xây dựng hệ thống giao diện và nhận diện thương hiệu.
+
+GIAI ĐOẠN 4:
+Xây dựng xác thực và phân quyền.
+
+GIAI ĐOẠN 5:
+Xây dựng chức năng Customer.
+
+GIAI ĐOẠN 6:
+Xây dựng chức năng Admin.
+
+GIAI ĐOẠN 7:
+Kết nối database và hoàn thiện các nghiệp vụ.
+
+GIAI ĐOẠN 8:
+Kiểm thử toàn hệ thống.
+
+GIAI ĐOẠN 9:
+Sửa lỗi và hoàn thiện.
+
+---
+
+# XV. YÊU CẦU ĐẦU RA
+
+Kết quả cuối cùng phải có:
+
+1. Website Customer hoàn chỉnh.
+2. Website Admin hoàn chỉnh.
+3. Landing Page.
+4. Đăng ký và đăng nhập.
+5. Quản lý tài khoản.
+6. Quản lý thú cưng.
+7. Danh mục và chi tiết dịch vụ.
+8. Bảng giá theo cân nặng.
+9. Đặt lịch.
+10. Thanh toán.
+11. Quản lý lịch làm việc.
+12. Quản lý booking.
+13. Lịch sử sử dụng.
+14. Đánh giá.
+15. Pet Point.
+16. Thông báo.
+17. Chatbot nếu đã có trong phạm vi giao diện hiện tại.
+18. Database và migration.
+19. RLS.
+20. Tài liệu hướng dẫn cài đặt và vận hành.
+
+---
+
+# XVI. NHỮNG ĐIỀU TUYỆT ĐỐI KHÔNG ĐƯỢC LÀM
+
+1. Không bỏ chức năng đã nêu trong tài liệu.
+2. Không tự ý thay đổi nghiệp vụ.
+3. Không tạo giao diện giả lập thay cho chức năng thực.
+4. Không tạo dữ liệu mẫu để đánh lừa người kiểm thử.
+5. Không tự động xác nhận thanh toán khi chưa có giao dịch hợp lệ.
+6. Không cho phép khách truy cập dữ liệu của khách khác.
+7. Không cho phép khách tự nâng quyền Admin.
+8. Không làm mất lịch sử booking.
+9. Không làm thay đổi giá của booking cũ.
+10. Không làm sai logic sức chứa.
+11. Không thay thế Mascot.
+12. Không tự ý thay đổi bảng màu.
+13. Không xóa những thành phần đang hoạt động mà không có lý do.
+14. Không tuyên bố hoàn thành nếu chưa kiểm thử.
+
+---
+
+# XVII. YÊU CẦU ĐẶC BIỆT TRƯỚC KHI BẮT ĐẦU
+
+Trước tiên, hãy đọc toàn bộ tài liệu nghiệp vụ và tất cả tài nguyên đã cung cấp.
+
+Sau đó, hãy thực hiện:
+
+BƯỚC 1:
+Lập danh sách chức năng Customer và Admin theo tài liệu.
+
+BƯỚC 2:
+Lập danh sách màn hình cần xây dựng.
+
+BƯỚC 3:
+Lập sơ đồ luồng nghiệp vụ tổng thể.
+
+BƯỚC 4:
+Lập mô hình database và quan hệ giữa các bảng.
+
+BƯỚC 5:
+Đối chiếu yêu cầu với cấu trúc source code hiện tại.
+
+BƯỚC 6:
+Liệt kê các điểm chưa rõ hoặc mâu thuẫn trong tài liệu. Không tự ý đưa ra quyết định nghiệp vụ khi chưa có căn cứ.
+
+BƯỚC 7:
+Đề xuất kế hoạch triển khai và các file cần tạo hoặc chỉnh sửa.
+
+Sau khi hoàn thành phân tích, bắt đầu triển khai theo từng giai đoạn.
+
+Không được chỉ trả lời bằng bản kế hoạch. Mục tiêu cuối cùng là thực sự xây dựng website hoạt động được.
+
+Hãy luôn giữ tính nhất quán giữa tài liệu nghiệp vụ, giao diện, code và database.
+
+SẢN PHẨM CUỐI CÙNG:
+
+PET PHẾT – PET FIRST
+
+Một hệ thống quản lý và đặt lịch dịch vụ chăm sóc thú cưng hoàn chỉnh, có giao diện Customer, Admin, cơ sở dữ liệu, phân quyền và các luồng nghiệp vụ hoạt động thực tế.
