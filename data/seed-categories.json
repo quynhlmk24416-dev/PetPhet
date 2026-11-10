@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cat-spa",
+    "name": "Spa & Làm đẹp",
+    "description": "Tắm thảo mộc, vệ sinh tai móng và cắt tỉa lông tạo kiểu cho thú cưng",
+    "icon": "scissors",
+    "is_active": true
+  },
+  {
+    "id": "cat-vet",
+    "name": "Khám Thú Y & Y tế",
+    "description": "Khám tổng quát, tiêm phòng định kỳ và tư vấn chăm sóc sức khỏe",
+    "icon": "stethoscope",
+    "is_active": true
+  },
+  {
+    "id": "cat-dental",
+    "name": "Chăm sóc răng miệng",
+    "description": "Vệ sinh răng miệng và chăm sóc sức khỏe răng nướu cho thú cưng",
+    "icon": "sparkles",
+    "is_active": true
+  },
+  {
+    "id": "cat-hotel",
+    "name": "Khách sạn & Trông giữ",
+    "description": "Dịch vụ lưu trú và chăm sóc thú cưng khi chủ nuôi vắng nhà",
+    "icon": "home",
+    "is_active": true
+  }
+]

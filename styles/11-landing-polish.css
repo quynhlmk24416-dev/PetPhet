@@ -1,0 +1,520 @@
+/* Landing page, navigation underline and newsletter polish.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Clean text navigation with the simple underline interaction from the reference. */
+.pet-public-nav button,
+.pet-service-nav-menu-public .pet-public-service-trigger,
+.pet-nav-links .pet-nav-item {
+  position: relative;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+  transition: color .18s ease;
+}
+.pet-public-nav button:hover,
+.pet-public-nav button.is-active,
+.pet-service-nav-menu-public .pet-public-service-trigger:hover,
+.pet-service-nav-menu-public .pet-public-service-trigger.is-active,
+.pet-nav-links .pet-nav-item:hover,
+.pet-nav-links .pet-nav-item.is-active {
+  color: #EC802B;
+  background: transparent !important;
+  transform: none;
+}
+.pet-public-nav button::after,
+.pet-nav-links .pet-nav-item::after {
+  position: absolute;
+  right: 9px;
+  bottom: 3px;
+  left: 9px;
+  height: 2px;
+  border-radius: 0;
+  background: #EC802B;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .18s ease;
+}
+.pet-public-nav button:hover::after,
+.pet-public-nav button.is-active::after,
+.pet-nav-links .pet-nav-item:hover::after,
+.pet-nav-links .pet-nav-item.is-active::after {
+  transform: scaleX(1);
+}
+.pet-service-nav-menu-public .pet-public-service-trigger::after {
+  position: absolute;
+  right: 9px;
+  bottom: 3px;
+  left: 9px;
+  height: 2px;
+  background: #EC802B;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .18s ease;
+}
+.pet-service-nav-menu-public:hover .pet-public-service-trigger::after,
+.pet-service-nav-menu-public:focus-within .pet-public-service-trigger::after,
+.pet-service-nav-menu-public .pet-public-service-trigger.is-active::after {
+  transform: scaleX(1);
+}
+.pet-service-nav-dropdown {
+  min-width: 205px;
+  padding: 0;
+  border: 1px solid #E8CCAD;
+  border-radius: 0;
+  background: #fffaf2;
+  box-shadow: 0 10px 24px rgba(104,64,31,.13);
+}
+.pet-service-nav-dropdown > button {
+  position: relative;
+  padding: 11px 16px;
+  border-radius: 0;
+  color: #81451F;
+  text-align: left;
+  transition: color .16s ease;
+}
+.pet-service-nav-dropdown > button:hover,
+.pet-service-nav-dropdown > button:focus-visible {
+  padding-left: 16px;
+  background: transparent;
+  color: #EC802B;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.pet-service-nav-menu-mobile .pet-service-nav-dropdown {
+  border-radius: 0;
+  box-shadow: none;
+}
+.pet-mobile-menu > button:hover,
+.pet-mobile-menu > button.is-active {
+  background: transparent !important;
+  color: #EC802B;
+}
+
+.pet-hero-backdrop {
+  z-index: 0 !important;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,250,242,.96) 0%, rgba(255,250,242,.86) 40%, rgba(255,250,242,.36) 70%, rgba(255,250,242,.12) 100%) !important;
+}
+.pet-hero-backdrop::before {
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  background: url('../images/brand/landing-background.png') center / cover no-repeat;
+  content: "";
+  filter: blur(13px);
+  opacity: .34;
+}
+.pet-hero-mascots {
+  right: 0;
+  left: 0;
+  z-index: 1;
+  width: 100% !important;
+  overflow: hidden;
+  pointer-events: auto;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 48%, rgba(0,0,0,.25) 60%, #000 76%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 48%, rgba(0,0,0,.25) 60%, #000 76%, #000 100%);
+}
+.pet-hero-mascots img {
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: .88;
+  filter: blur(1.5px) saturate(.84) sepia(.08);
+  transform: scale(1.035);
+  transition: opacity .25s ease, filter .25s ease;
+}
+.pet-hero-mascots::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(255,250,242,.55), rgba(255,250,242,.02) 42%, rgba(255,250,242,.08));
+  content: "";
+  pointer-events: none;
+}
+.pet-landing-page > .pet-section-block,
+.pet-landing-page > .pet-review-section,
+.pet-landing-page > .pet-care-notes {
+  width: min(1220px, calc(100% - 44px));
+  margin: 0 auto 72px;
+}
+.pet-landing-page .pet-section-heading h2,
+.pet-home-values-heading h2,
+.pet-newsletter h2 {
+  font-size: clamp(28px, 3.2vw, 38px);
+}
+.pet-landing-page .pet-section-heading p,
+.pet-landing-page .pet-home-service-card .pet-service-card-body > p,
+.pet-landing-page .pet-steps-grid p {
+  font-size: 14px;
+}
+.pet-landing-page .pet-section-kicker { font-size: 13px; letter-spacing: 1.4px; }
+.pet-landing-page .pet-steps-grid h3 { font-size: 16px; }
+.pet-landing-page .pet-review-section .pet-section-heading { margin-bottom: 20px; }
+.pet-landing-page .pet-review-section .pet-section-kicker { font-size: 15px; }
+.pet-landing-page .pet-review-section .pet-section-heading h2 {
+  margin-top: 5px;
+  font-size: clamp(23px, 2.4vw, 28px);
+}
+.pet-landing-page .pet-review-card { padding: 22px; background: #ffffff; box-shadow: 0 8px 24px rgba(121, 71, 31, .06); }
+.pet-landing-page .pet-review-card p { font-size: 15px; line-height: 1.75; }
+.pet-landing-page .pet-review-card strong { font-size: 14px; }
+.pet-landing-page .pet-review-card small { font-size: 12px; }
+.pet-landing-page .pet-review-reply { font-size: 12px; }
+.pet-landing-page .pet-review-section .pet-section-heading p { display: none; }
+.pet-landing-page .pet-bottom-cta h2 { font-size: clamp(22px, 2.6vw, 29px); }
+
+.pet-home-values,
+.pet-care-notes,
+.pet-newsletter {
+  width: min(1220px, calc(100% - 44px));
+  margin: 0 auto 72px;
+}
+.pet-home-values {
+  padding: 38px 42px 34px;
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #f0ddc3;
+  box-shadow: 0 10px 30px rgba(121, 71, 31, .06);
+}
+.pet-home-values-heading { max-width: none; margin-bottom: 28px; }
+.pet-home-values-heading h2 {
+  margin: 7px 0 0;
+  font: 900 clamp(24px, 2.6vw, 36px)/1.2 'Quicksand', sans-serif;
+  white-space: nowrap;
+}
+.pet-home-values-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  border-block: 1px solid #e8ccad;
+  background: #ffffff;
+}
+.pet-home-values-list article {
+  display: flex;
+  gap: 16px;
+  padding: 24px 20px;
+  background: #ffffff;
+}
+.pet-home-values-list article + article { border-left: 1px solid #e8ccad; }
+.pet-home-values-list article > span {
+  color: #EC802B;
+  font: 900 25px 'Quicksand', sans-serif;
+}
+.pet-home-values-list h3 { margin: 2px 0 7px; color: #81451F; font: 900 17px 'Quicksand', sans-serif; }
+.pet-home-values-list p { margin: 0; color: #805b3e; font: 14px/1.7 'Be Vietnam Pro', sans-serif; }
+.pet-care-notes .pet-section-heading { margin-bottom: 22px; }
+.pet-care-notes-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.pet-care-notes-grid article {
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid #f0ddc7;
+  border-top: 3px solid #66BCB4;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(121, 71, 31, .06);
+}
+.pet-care-notes-grid article svg { color: #EC802B; }
+.pet-care-notes-grid h3 { margin: 13px 0 7px; color: #81451F; font: 900 17px 'Quicksand', sans-serif; }
+.pet-care-notes-grid p { margin: 0; color: #805b3e; font: 14px/1.75 'Be Vietnam Pro', sans-serif; }
+.pet-newsletter {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(320px,.9fr);
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 52px;
+  padding: clamp(24px, 4vw, 42px);
+  border-radius: 22px;
+  background: linear-gradient(115deg, #fff1dc, #fffaf2 72%);
+  border: 1px solid #e8ccad;
+}
+.pet-newsletter h2 { margin: 8px 0; color: #81451F; font: 900 clamp(27px, 3vw, 36px)/1.18 'Quicksand', sans-serif; }
+.pet-newsletter > div > p { margin: 0; color: #805b3e; font: 15px/1.7 'Be Vietnam Pro', sans-serif; }
+.pet-newsletter form { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 9px; }
+.pet-newsletter input {
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #e8ccad;
+  border-radius: 12px;
+  outline: none;
+  background: #fff;
+  color: #81451F;
+  font: 14px 'Be Vietnam Pro', sans-serif;
+}
+.pet-newsletter input:focus { border-color: #EC802B; box-shadow: 0 0 0 3px rgba(236,128,43,.13); }
+.pet-newsletter form > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  background: #EC802B;
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.pet-newsletter form > button:hover { background: #d66b1e; }
+.pet-newsletter-status { grid-column: 1 / -1; margin: 0; color: #805b3e; font-size: 12px; line-height: 1.5; }
+
+:root {
+  scrollbar-color: #66BCB4 #FFF4E5;
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { border: 2px solid #f1dfc8; border-radius: 99px; background: #FFF4E5; }
+*::-webkit-scrollbar-thumb { border: 2px solid #FFF4E5; border-radius: 99px; background: #83CEC6; }
+*::-webkit-scrollbar-thumb:hover { background: #458F88; }
+.pet-chatbot-quick-prompts,
+.pet-chatbot-messages {
+  scrollbar-color: #83CEC6 #FFF4E5;
+  scrollbar-width: thin;
+}
+.pet-chatbot-quick-prompts { cursor: grab; touch-action: pan-y; user-select: none; }
+.pet-chatbot-quick-prompts:active { cursor: grabbing; }
+.pet-chatbot-quick-prompts::-webkit-scrollbar,
+.pet-chatbot-messages::-webkit-scrollbar { width: 10px; height: 10px; }
+.pet-chatbot-quick-prompts::-webkit-scrollbar-track,
+.pet-chatbot-messages::-webkit-scrollbar-track {
+  border: 2px solid #f1dfc8;
+  border-radius: 99px;
+  background: #FFF4E5;
+}
+.pet-chatbot-quick-prompts::-webkit-scrollbar-thumb,
+.pet-chatbot-messages::-webkit-scrollbar-thumb {
+  border: 2px solid #FFF4E5;
+  border-radius: 99px;
+  background: #83CEC6;
+}
+.pet-chatbot-quick-prompts::-webkit-scrollbar-thumb:hover,
+.pet-chatbot-messages::-webkit-scrollbar-thumb:hover { background: #458F88; }
+
+.pet-nav-label { font-size: clamp(13px, 1.05vw, 15px) !important; }
+.pet-profile-button { font-size: 14px; }
+.pet-public-nav button,
+.pet-service-nav-menu-public .pet-public-service-trigger { font-size: clamp(14px, 1.05vw, 16px) !important; }
+.pet-public-actions button { font-size: 14px; }
+.pet-mobile-menu button { font-size: 14px; }
+
+@media (min-width: 881px) and (max-width: 1100px) {
+  .pet-nav-label { font-size: 12px !important; }
+  .pet-public-nav button,
+  .pet-service-nav-menu-public .pet-public-service-trigger { font-size: 13px !important; padding-inline: 5px; }
+  .pet-public-actions button { font-size: 12px; padding-inline: 6px; }
+}
+@media (max-width: 760px) {
+  .pet-public-nav button,
+  .pet-service-nav-menu-public .pet-public-service-trigger { font-size: 14px !important; }
+  .pet-public-actions button { font-size: 12px; }
+}
+@media (max-width: 620px) {
+  .pet-public-nav button,
+  .pet-service-nav-menu-public .pet-public-service-trigger { font-size: 13px !important; }
+  .pet-public-actions button { font-size: 11px; }
+}
+
+@media (max-width: 760px) {
+  .pet-public-nav button,
+  .pet-service-nav-menu-public .pet-public-service-trigger { padding-inline: 8px; }
+  .pet-public-nav button::after,
+  .pet-service-nav-menu-public .pet-public-service-trigger::after { right: 8px; left: 8px; }
+  .pet-hero-mascots { left: 0; -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.45) 16%, #000 34%, #000 88%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.45) 16%, #000 34%, #000 88%, transparent 100%); }
+  .pet-landing-page > .pet-section-block,
+  .pet-landing-page > .pet-review-section,
+  .pet-landing-page > .pet-care-notes,
+  .pet-home-values,
+  .pet-care-notes,
+  .pet-newsletter { width: calc(100% - 32px); margin-bottom: 48px; }
+  .pet-home-values { padding: 24px 18px; border-radius: 20px; }
+  .pet-landing-page .pet-home-values-heading h2 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
+  .pet-home-values-list,
+  .pet-care-notes-grid { grid-template-columns: 1fr; }
+  .pet-home-values-list article { padding: 18px 4px; }
+  .pet-home-values-list article + article { border-top: 1px solid #e8ccad; border-left: 0; }
+  .pet-care-notes-grid article { padding: 18px; }
+  .pet-newsletter { grid-template-columns: 1fr; gap: 20px; padding: 24px 18px; }
+  .pet-newsletter form { grid-template-columns: 1fr; }
+  .pet-newsletter form > button { width: 100%; }
+  .pet-landing-page .pet-review-card p { font-size: 14px; }
+}
+
+.pet-hero-backdrop {
+  background: linear-gradient(90deg, rgba(255,250,242,.98) 0%, rgba(255,250,242,.97) 38%, rgba(255,250,242,.9) 54%, rgba(255,250,242,.54) 76%, rgba(255,250,242,.34) 100%) !important;
+}
+.pet-hero-backdrop::before { opacity: .34; filter: blur(13px); }
+.pet-hero-section { min-height: max(760px, calc(100svh - 99px)); }
+.pet-hero-image-stage {
+  position: absolute;
+  right: clamp(48px, 6vw, 96px);
+  top: clamp(175px, 23%, 205px);
+  bottom: auto;
+  transform: none;
+  z-index: 2;
+  display: flex;
+  width: min(70vw, 900px);
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.pet-hero-mascots {
+  position: relative;
+  inset: auto;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none;
+  aspect-ratio: 1.4;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.pet-hero-mascots:active { cursor: grabbing; }
+.pet-hero-mascots img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center 50% !important;
+  opacity: 0;
+  filter: saturate(.94);
+  transform: none;
+  -webkit-mask-image: radial-gradient(ellipse 68% 70% at 56% 50%, #000 36%, rgba(0,0,0,.92) 54%, rgba(0,0,0,.45) 76%, transparent 100%);
+  mask-image: radial-gradient(ellipse 68% 70% at 56% 50%, #000 36%, rgba(0,0,0,.92) 54%, rgba(0,0,0,.45) 76%, transparent 100%);
+  transition: opacity .55s cubic-bezier(.22,.61,.36,1);
+}
+.pet-hero-mascots img.is-active {
+  opacity: 1;
+}
+.pet-hero-mascots::after { display: none; }
+.pet-hero-copy {
+  position: relative;
+  z-index: 3;
+  width: min(50%, 780px) !important;
+  margin: 0;
+  padding: clamp(34px, 5vh, 56px) 0 80px clamp(28px, 5vw, 84px) !important;
+  text-align: left;
+}
+.pet-hero-actions,
+.pet-hero-trust { justify-content: flex-start; }
+.pet-hero-copy h1 {
+  font-size: clamp(26px, 2.75vw, 44px) !important;
+  white-space: nowrap !important;
+}
+.pet-hero-copy > p {
+  margin-inline: 0;
+  max-width: none !important;
+  font-size: clamp(13px, 1.1vw, 16px) !important;
+  white-space: nowrap !important;
+}
+.pet-hero-trust { font-size: 14px; }
+.pet-hero-scroll {
+  left: 20% !important;
+  bottom: 100px !important;
+  transform: translateX(-50%) !important;
+  font-size: 16px;
+  padding: 10px 18px;
+}
+.pet-hero-scroll:hover { transform: translate(-50%, -3px) !important; }
+
+.pet-service-nav-dropdown {
+  width: max-content;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 0 0 14px 14px;
+}
+.pet-service-nav-dropdown > button {
+  width: auto;
+  min-width: 0;
+  padding: 10px 14px;
+  border-radius: 0;
+  white-space: nowrap;
+  transition: background .16s ease, color .16s ease;
+  font-weight: 500;
+}
+.pet-service-nav-dropdown > button:hover,
+.pet-service-nav-dropdown > button:focus-visible {
+  padding-left: 14px;
+  background: #fff0df;
+  color: #EC802B;
+  text-decoration: none;
+  outline: none;
+}
+.pet-service-nav-menu-public .pet-public-service-trigger:hover,
+.pet-service-nav-menu-public .pet-public-service-trigger.is-active {
+  background: transparent;
+}
+
+.pet-service-nav-dropdown > button::after { display: none !important; }
+.pet-service-nav-dropdown > button { font-weight: 500 !important; }
+.pet-notification-trigger > svg { width: 27px; height: 27px; }
+.pet-bottom-cta {
+  margin-bottom: 0;
+  border-radius: 20px;
+}
+.pet-newsletter {
+  margin-top: 20px;
+  border-radius: 16px;
+}
+.pet-about-photo { border-radius: 16px; }
+.pet-service-result-card > div:first-child img { object-position: center 38%; }
+.pet-service-rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #81451F;
+  font-size: 13px;
+  line-height: 1;
+}
+.pet-service-rating-stars { display: inline-flex; gap: 2px; color: #d7c6ad; }
+.pet-service-rating-stars { flex-flow: row nowrap; white-space: nowrap; }
+.pet-service-rating-stars svg { display: block; flex: 0 0 15px; width: 15px; height: 15px; fill: transparent; stroke-width: 1.8; }
+.pet-service-rating-stars svg.is-filled { color: #f0ad32; fill: currentColor; }
+.pet-service-rating > strong { margin-left: 2px; font-size: 14px; font-weight: 900; }
+.pet-service-rating-count { color: #8d7a67; font-size: 12px; }
+.pet-service-detail-backdrop [role="dialog"] > div:first-child { background: #fff3e3; }
+.pet-service-detail-image { object-fit: contain; object-position: center; }
+
+@media (max-width: 760px) {
+  .pet-hero-section { min-height: max(780px, calc(100svh - 120px)) !important; }
+  .pet-hero-backdrop {
+    background: linear-gradient(180deg, rgba(255,250,242,.98) 0%, rgba(255,250,242,.97) 42%, rgba(255,250,242,.8) 69%, rgba(255,250,242,.54) 100%) !important;
+  }
+  .pet-hero-image-stage {
+    right: 52px;
+    top: auto;
+    bottom: 55px;
+    transform: none;
+    width: min(78vw, 420px);
+  }
+  .pet-hero-mascots { max-height: none; aspect-ratio: 1.45; }
+  .pet-hero-copy {
+    width: 100% !important;
+    padding: 34px 22px 0 !important;
+  }
+  .pet-hero-copy h1 { font-size: clamp(34px, 8.5vw, 46px); white-space: normal !important; }
+  .pet-hero-copy > p { font-size: 16px; white-space: normal !important; }
+  .pet-hero-trust { gap: 10px 16px; font-size: 12px; }
+  .pet-hero-scroll { left: 50% !important; bottom: 10px !important; }
+  .pet-bottom-cta { margin-bottom: 0; border-radius: 16px; }
+  .pet-newsletter { margin-top: 16px; border-radius: 14px; }
+}
+
+.quote-box {
+  position: relative;
+  width: 75%;
+  box-sizing: border-box;
+  margin: 80px 0 0;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 4px solid #ec802b;
+  border-radius: 10px 10px 10px 10px;
+}

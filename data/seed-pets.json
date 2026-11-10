@@ -1,0 +1,38 @@
+[
+  {
+    "id": "pet-bm-01",
+    "user_id": "usr-customer-01",
+    "pet_name": "Bánh Mì",
+    "species": "Chó",
+    "breed": "Poodle Teacup",
+    "gender": "Đực",
+    "birth_date": "2024-03-15",
+    "weight": 3.8,
+    "weight_updated_at": "2026-10-20T10:00:00Z",
+    "notes": "Bé ngoan, hơi nhát tiếng máy sấy to, thích được dỗ dành.",
+    "health_status": "Khỏe mạnh, sinh hoạt bình thường",
+    "vaccination_history": "Đã tiêm đủ 3 mũi cơ bản + Dại năm 2025",
+    "avatar_url": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=300&q=80",
+    "is_active": true,
+    "created_at": "2026-03-01T08:00:00Z",
+    "updated_at": "2026-10-20T10:00:00Z"
+  },
+  {
+    "id": "pet-mm-02",
+    "user_id": "usr-customer-01",
+    "pet_name": "Mây Mây",
+    "species": "Mèo",
+    "breed": "Mèo Anh Lông Ngắn",
+    "gender": "Cái",
+    "birth_date": "2023-08-20",
+    "weight": 4.6,
+    "weight_updated_at": "2026-10-22T09:00:00Z",
+    "notes": "Lông dày, ngoan khi cắt móng, thích chải lông.",
+    "health_status": "Khỏe mạnh, móng sạch",
+    "vaccination_history": "Đã tiêm đủ mũi 4 bệnh + Dại",
+    "avatar_url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80",
+    "is_active": true,
+    "created_at": "2026-03-05T08:00:00Z",
+    "updated_at": "2026-10-22T09:00:00Z"
+  }
+]

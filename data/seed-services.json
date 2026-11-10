@@ -1,0 +1,207 @@
+[
+  {
+    "id": "srv-spa-01",
+    "category_id": "cat-spa",
+    "service_name": "Combo Tắm Spa & Vệ Sinh",
+    "description": "Quy trình 7 bước dịu nhẹ: Chải tơi lông rụng, ngâm bồn sục massage dầu thảo mộc hữu cơ, vắt tuyến hôi, sấy phồng tơi xốp, vệ sinh tai mắt, bấm mài móng không trầy xước, xịt serum dưỡng lông bóng khỏe.",
+    "base_price": 220000,
+    "is_weight_based": true,
+    "pricing_tiers": [
+      {
+        "id": "tier-1",
+        "service_id": "srv-spa-01",
+        "min_weight": 0,
+        "max_weight": 5,
+        "price": 220000
+      },
+      {
+        "id": "tier-2",
+        "service_id": "srv-spa-01",
+        "min_weight": 5,
+        "max_weight": 10,
+        "price": 280000
+      },
+      {
+        "id": "tier-3",
+        "service_id": "srv-spa-01",
+        "min_weight": 10,
+        "max_weight": 20,
+        "price": 380000
+      },
+      {
+        "id": "tier-4",
+        "service_id": "srv-spa-01",
+        "min_weight": 20,
+        "max_weight": 50,
+        "price": 520000
+      }
+    ],
+    "duration_minutes": 60,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-10T10:00:00Z"
+  },
+  {
+    "id": "srv-spa-02",
+    "category_id": "cat-spa",
+    "service_name": "Grooming Cắt Tỉa Tạo Kiểu",
+    "description": "Chuyên gia grooming tạo kiểu theo chuẩn giống (Teddy Bear, Boo, Búp bê). Bao gồm đầy đủ quy trình tắm spa 7 bước dưỡng ẩm thảo mộc trước khi cắt tỉa.",
+    "base_price": 350000,
+    "is_weight_based": true,
+    "pricing_tiers": [
+      {
+        "id": "tier-5",
+        "service_id": "srv-spa-02",
+        "min_weight": 0,
+        "max_weight": 5,
+        "price": 350000
+      },
+      {
+        "id": "tier-6",
+        "service_id": "srv-spa-02",
+        "min_weight": 5,
+        "max_weight": 10,
+        "price": 450000
+      },
+      {
+        "id": "tier-7",
+        "service_id": "srv-spa-02",
+        "min_weight": 10,
+        "max_weight": 20,
+        "price": 580000
+      },
+      {
+        "id": "tier-8",
+        "service_id": "srv-spa-02",
+        "min_weight": 20,
+        "max_weight": 50,
+        "price": 750000
+      }
+    ],
+    "duration_minutes": 90,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "./images/services/grooming.png",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-11T10:00:00Z"
+  },
+  {
+    "id": "srv-vet-01",
+    "category_id": "cat-vet",
+    "service_name": "Khám Thú Y - Tư Vấn Sức Khỏe",
+    "description": "Bác sĩ thú y trực tiếp thăm khám lâm sàng tim phổi, kiểm tra niêm mạc, tai mũi họng, đánh giá sinh hiệu và thể trạng (phí khám ban đầu, các xét nghiệm điều trị chuyên sâu phát sinh sẽ được tư vấn cụ thể).",
+    "base_price": 150000,
+    "is_weight_based": false,
+    "duration_minutes": 45,
+    "species_supported": [
+      "Chó",
+      "Mèo",
+      "Khác"
+    ],
+    "image_url": "./images/services/vet-consult.jpg",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-12T10:00:00Z"
+  },
+  {
+    "id": "srv-vet-02",
+    "category_id": "cat-vet",
+    "service_name": "Tiêm Phòng Vaccine",
+    "description": "Tiêm phòng vaccine chính hãng (Rabies dại, mũi 5 bệnh, 7 bệnh cho chó, 4 bệnh cho mèo), theo dõi phản ứng sau tiêm 15 phút và đóng dấu sổ theo dõi tiêm chủng.",
+    "base_price": 280000,
+    "is_weight_based": false,
+    "duration_minutes": 30,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "./images/services/vaccination.jpg",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-14T10:00:00Z"
+  },
+  {
+    "id": "srv-dental-01",
+    "category_id": "cat-dental",
+    "service_name": "Vệ Sinh Răng Miệng - Cạo Vôi",
+    "description": "Kiểm tra tình trạng răng và nướu, làm sạch mảng bám/cao răng bằng quy trình phù hợp với từng bé, vệ sinh khoang miệng và hướng dẫn chăm sóc răng tại nhà. Bác sĩ sẽ trao đổi trước nếu bé cần kiểm tra chuyên sâu hoặc có dấu hiệu viêm nướu.",
+    "base_price": 250000,
+    "is_weight_based": false,
+    "duration_minutes": 45,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "./images/services/dental-care.jpg",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-15T10:00:00Z"
+  },
+  {
+    "id": "srv-spa-03",
+    "category_id": "cat-spa",
+    "service_name": "Vệ Sinh Tai, Mắt",
+    "description": "Làm sạch nhẹ nhàng vành tai, vùng tai ngoài và khóe mắt cho thú cưng. Nhân viên quan sát tình trạng da, tai và mắt; nếu có dấu hiệu bất thường sẽ trao đổi với chủ nuôi để được bác sĩ tư vấn.",
+    "base_price": 120000,
+    "is_weight_based": false,
+    "duration_minutes": 30,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "./images/services/ear-exam.jpg",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-16T10:00:00Z"
+  },
+  {
+    "id": "srv-vet-03",
+    "category_id": "cat-vet",
+    "service_name": "Siêu Âm",
+    "description": "Bác sĩ thăm khám và chỉ định siêu âm khi phù hợp để hỗ trợ đánh giá các cơ quan bên trong. Kết quả được giải thích trực tiếp; có thể cần chuẩn bị hoặc kiểm tra bổ sung theo tình trạng của từng bé.",
+    "base_price": 180000,
+    "is_weight_based": false,
+    "duration_minutes": 40,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "./images/services/ultrasound.jpg",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-17T10:00:00Z"
+  },
+  {
+    "id": "srv-spa-04",
+    "category_id": "cat-spa",
+    "service_name": "Cắt Móng An Toàn",
+    "description": "Cắt và dũa phần móng thừa phù hợp với độ dài an toàn cho từng bé. Nhân viên thao tác nhẹ nhàng, tránh phần tủy móng và trao đổi trước với chủ nuôi nếu móng có dấu hiệu tổn thương.",
+    "base_price": 80000,
+    "is_weight_based": false,
+    "duration_minutes": 20,
+    "species_supported": [
+      "Chó",
+      "Mèo"
+    ],
+    "image_url": "./images/services/nail-trim.jpg",
+    "is_active": true,
+    "rating_avg": 0,
+    "rating_count": 0,
+    "created_at": "2026-01-18T10:00:00Z"
+  }
+]

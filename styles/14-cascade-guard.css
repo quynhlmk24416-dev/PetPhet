@@ -1,0 +1,27 @@
+/* Final cascade guard for the public/customer hierarchy.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Final cascade guard for the public/customer hierarchy. */
+.pet-public-nav > button,
+.pet-public-nav .pet-public-service-trigger,
+.pet-nav-links > .pet-nav-item,
+.pet-nav-label,
+.pet-service-nav-menu-customer .pet-service-nav-trigger {
+  font-weight: 900 !important;
+}
+.pet-service-nav-dropdown > button,
+.pet-mobile-menu > button {
+  font-weight: 400 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-solid-paw {
+    animation: none;
+    opacity: .85;
+    right: auto;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1199px) {
+  .pet-pricing-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

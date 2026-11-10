@@ -1,0 +1,124 @@
+/* Public navigation, hero mascots, footer banner, chatbot launcher, toast.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Public-facing home navigation. This is the first screen before any login. */
+.pet-public-navbar-wrap {
+  position: sticky; top: 12px; z-index: 40; width: min(1500px, calc(100% - 44px)); margin: 12px auto 0;
+}
+.pet-public-navbar {
+  min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 10px 25px; border: 1px solid rgba(255,255,255,.9); border-radius: 30px;
+  background: rgba(255,250,242,.93); box-shadow: 0 12px 34px rgba(117,66,26,.11); backdrop-filter: blur(14px);
+}
+.pet-public-nav, .pet-public-actions { display: flex; align-items: center; gap: 9px; }
+.pet-public-nav button, .pet-public-actions button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px;
+  border: 0; border-radius: 14px; padding: 10px 14px; color: #81451F; background: transparent;
+  font-size: 12px; font-weight: 900; transition: .18s ease;
+}
+.pet-public-nav button:hover, .pet-public-nav button.is-active { background: #fff0df; color: #EC802B; }
+.pet-public-actions .pet-public-login { border: 1px solid #E8CCAD; background: #fffaf4; }
+.pet-public-actions .pet-public-register { background: linear-gradient(135deg,#f58a30,#e66e1c); color: white; box-shadow: 0 6px 14px rgba(113,67,26,.13); }
+.pet-public-actions button:hover { transform: translateY(-1px); }
+
+/* Make both mascots fully visible on the landing hero at desktop and mobile sizes. */
+.pet-hero-section {
+  background: linear-gradient(120deg, rgba(255,246,232,.96), rgba(255,238,213,.35)) !important;
+}
+.pet-hero-backdrop {
+  z-index: 0 !important;
+  background: linear-gradient(90deg, rgba(255,243,224,.96) 0%, rgba(255,243,224,.86) 37%, rgba(255,243,224,.16) 68%, rgba(255,243,224,.03) 100%) !important;
+}
+.pet-hero-mascots {
+  position: absolute; z-index: 0; right: 0; bottom: 0; width: min(64%, 930px); height: 100%;
+  display: flex; align-items: flex-end; justify-content: flex-end; pointer-events: none;
+}
+.pet-hero-mascots img {
+  display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%;
+  object-fit: contain; object-position: right bottom;
+}
+.pet-hero-copy, .pet-hero-scroll { position: relative; z-index: 2; }
+.pet-mascot-card img { object-fit: contain !important; object-position: center !important; padding: 5px; background: #fff1dc; }
+
+/* Footer uses the wide Cún Phết & Mèo Bông banner as its own background. */
+.pet-footer {
+  position: relative; isolation: isolate; min-height: 385px;
+  background-color: #fff0dc !important;
+  background-image: linear-gradient(90deg, rgba(255,246,233,.96) 0%, rgba(255,246,233,.88) 38%, rgba(255,246,233,.20) 73%, rgba(255,246,233,.05) 100%), url('../images/brand/footer-background.png') !important;
+  background-size: contain !important; background-position: right bottom !important; background-repeat: no-repeat !important;
+  border-top: 4px solid #EC802B !important;
+}
+.pet-footer, .pet-footer p, .pet-footer span, .pet-footer li, .pet-footer h3, .pet-footer h4 { color: #81451F !important; }
+.pet-footer .border-b { border-color: rgba(129,69,31,.22) !important; }
+.pet-footer .text-orange-100\/90, .pet-footer .text-orange-100\/80 { color: #805737 !important; }
+.pet-footer .text-white { color: #81451F !important; }
+.pet-footer .bg-white { background: rgba(255,250,242,.88) !important; }
+
+/* The supplied chatbot tile is the actual clickable launcher. */
+.pet-chatbot-launcher {
+  width: 112px !important; height: 96px !important; border: 0 !important; border-radius: 18px !important;
+  padding: 0 !important; overflow: visible !important; background: transparent !important;
+}
+.pet-chatbot-launcher > img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 15px; }
+.pet-chatbot-launcher > span { top: 0 !important; right: 0 !important; }
+
+/* Branded success / error toast with the supplied mascot status illustrations. */
+.pet-toast-viewport {
+  position: fixed; top: 22px; right: 22px; z-index: 120; width: min(410px, calc(100vw - 28px));
+  display: flex; flex-direction: column; gap: 11px; pointer-events: none;
+}
+.pet-toast-card {
+  display: grid; grid-template-columns: 70px minmax(0,1fr) 25px; align-items: center; gap: 12px;
+  padding: 11px 12px; border: 1px solid #ecd8bf; border-radius: 19px; background: rgba(255,251,245,.98);
+  box-shadow: 0 14px 38px rgba(95,57,26,.2); animation: pet-toast-in .24s ease-out; pointer-events: auto;
+}
+.pet-toast-card.success { border-left: 5px solid #66BCB4; }
+.pet-toast-card.error { border-left: 5px solid #e85e49; }
+.pet-toast-illustration { display: block; width: 70px; height: 76px; object-fit: contain; border-radius: 12px; }
+.pet-toast-copy { min-width: 0; }
+.pet-toast-copy strong { display: block; color: #81451F; font: 900 13px 'Quicksand',sans-serif; }
+.pet-toast-copy p { margin: 4px 0 0; color: #805737; font: 600 11px/1.5 'Be Vietnam Pro',sans-serif; overflow-wrap: anywhere; }
+.pet-toast-close { display: grid; place-items: center; width: 25px; height: 25px; border: 0; border-radius: 8px; background: #fff0df; color: #81451F; }
+@keyframes pet-toast-in { from { opacity: 0; transform: translateX(15px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Explicitly identify the login portal selected by the visitor. */
+.pet-login-role-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: -4px 0 16px; }
+.pet-login-role-switch button {
+  display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 43px;
+  border: 1px solid #ead6bf; border-radius: 13px; color: #805737; background: #fffaf4; font-size: 11px; font-weight: 900;
+}
+.pet-login-role-switch button.is-active.customer { color: #fff; border-color: #EC802B; background: #EC802B; }
+.pet-login-role-switch button.is-active.admin { color: #fff; border-color: #81451F; background: #81451F; }
+.pet-auth-demo-credentials { display: block !important; }
+.pet-auth-demo-credentials p { margin: 6px 0 0; color: #805737; font-size: 10px; overflow-wrap: anywhere; }
+.pet-auth-demo-credentials p strong { color: #81451F; }
+
+@media (max-width: 880px) {
+  .pet-public-navbar-wrap { width: calc(100% - 24px); top: 7px; margin-top: 7px; }
+  .pet-public-navbar { min-height: 72px; padding: 7px 12px; border-radius: 23px; gap: 8px; }
+  .pet-public-nav { gap: 2px; }
+  .pet-public-nav button { padding: 9px 8px; font-size: 10px; }
+  .pet-public-nav button svg { display: none; }
+  .pet-public-actions { gap: 5px; }
+  .pet-public-actions button { min-height: 38px; padding: 8px 10px; font-size: 10px; }
+  .pet-hero-mascots { width: 64%; }
+}
+@media (max-width: 620px) {
+  .pet-public-navbar-wrap { width: calc(100% - 16px); }
+  .pet-public-navbar { flex-wrap: wrap; }
+  .pet-public-nav { order: 3; width: 100%; justify-content: center; border-top: 1px solid #f1e0ce; padding-top: 5px; }
+  .pet-public-actions { margin-left: auto; }
+  .pet-public-actions button { font-size: 9px; padding: 7px 9px; }
+  .pet-public-navbar .pet-brand-word { font-size: 25px; }
+  .pet-hero-section { min-height: 760px !important; background: linear-gradient(180deg,#fff2df 0%,#ffe8c9 100%) !important; }
+  .pet-hero-backdrop { background: linear-gradient(180deg,rgba(255,243,224,.99) 0%,rgba(255,243,224,.94) 48%,rgba(255,243,224,.05) 77%) !important; }
+  .pet-hero-copy { width: 100% !important; padding: 36px 22px 0 !important; }
+  .pet-hero-copy h1 { font-size: clamp(36px, 10vw, 49px) !important; }
+  .pet-hero-mascots { width: 100%; height: 43%; right: 0; bottom: 0; justify-content: center; }
+  .pet-hero-mascots img { object-position: center bottom; }
+  .pet-footer { min-height: 520px; background-image: linear-gradient(180deg,rgba(255,246,233,.97) 0%,rgba(255,246,233,.93) 55%,rgba(255,246,233,.28) 100%), url('../images/brand/footer-background.png') !important; background-size: contain !important; background-position: center bottom !important; }
+  .pet-chatbot-launcher { width: 88px !important; height: 76px !important; }
+  .pet-toast-viewport { top: 10px; right: 10px; width: calc(100vw - 20px); }
+  .pet-toast-card { grid-template-columns: 60px minmax(0,1fr) 23px; gap: 8px; padding: 9px; }
+  .pet-toast-illustration { width: 60px; height: 68px; }
+}

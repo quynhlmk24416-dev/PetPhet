@@ -1,0 +1,202 @@
+/* Feedback pass: palette, accessible CTAs and responsive navigation.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* PET PHẾT FEEDBACK PASS — warm palette, accessible CTAs and responsive navigation. */
+.pet-hero-scroll {
+  border: 1px solid rgba(232,204,173,.9);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  z-index: 3;
+}
+.pet-hero-scroll:hover { transform: translate(-50%, -3px); background: #fff; box-shadow: 0 8px 20px rgba(129,69,31,.14); }
+.pet-hero-scroll:focus-visible, .pet-text-link:focus-visible, .pet-outline-link:focus-visible,
+.pet-social-icon:focus-visible, .pet-footer-service-link:focus-visible { outline: 3px solid #66BCB4; outline-offset: 3px; }
+.pet-marquee {
+  width: 100%; overflow: hidden; margin: 0 auto 42px; padding: 13px 0;
+  background: linear-gradient(90deg, #EC802B, #F19A4A 50%, #EC802B);
+  color: #fffaf2; border-block: 1px solid rgba(255,255,255,.5);
+  box-shadow: 0 8px 20px rgba(129,69,31,.10);
+}
+.pet-marquee-track { display: flex; width: max-content; animation: pet-marquee-scroll 32s linear infinite; }
+.pet-marquee-group { display: flex; align-items: center; gap: clamp(24px, 4vw, 58px); padding-right: clamp(24px, 4vw, 58px); }
+.pet-marquee-group span { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font: 900 14px 'Quicksand', sans-serif; letter-spacing: .3px; }
+.pet-marquee-group svg { color: #EDC55B; }
+.pet-marquee:hover .pet-marquee-track { animation-play-state: paused; }
+@keyframes pet-marquee-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .pet-marquee-track { animation: none; } }
+.pet-create-profile-link {
+  margin-top: 18px; padding: 12px 17px; border-radius: 14px; border: 1px solid #E8CCAD;
+  background: #fffaf2; color: #81451F; font-size: 13px; font-weight: 1000;
+  box-shadow: 0 7px 18px rgba(129,69,31,.10);
+}
+.pet-create-profile-link:hover { color: #fff; border-color: #EC802B; background: #EC802B; transform: translateY(-2px); }
+.pet-welcome-strip { scroll-margin-top: 125px; }
+.pet-promo-section {
+  width: min(1220px, calc(100% - 44px)); margin: 0 auto 68px; padding: 25px;
+  border: 1px solid #E8CCAD; border-radius: 28px; background: linear-gradient(135deg, #FFF9F0, #FCEBD8);
+  box-shadow: 0 12px 30px rgba(129,69,31,.07); display: grid; grid-template-columns: minmax(220px,.8fr) 1.2fr; gap: 22px; align-items: center;
+}
+.pet-promo-heading h2 { margin: 8px 0 5px; color: #81451F; font: 900 clamp(20px, 2.4vw, 28px)/1.2 'Quicksand',sans-serif; }
+.pet-promo-heading p { margin: 0; color: #806044; font: 12px/1.6 'Be Vietnam Pro',sans-serif; }
+.pet-promo-coupons { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.pet-promo-coupon { display: flex; flex-direction: column; gap: 7px; min-width: 0; padding: 17px; border-radius: 18px; background: rgba(255,255,255,.86); border: 1px dashed #D9A46D; box-shadow: 0 5px 14px rgba(129,69,31,.06); }
+.pet-promo-code { align-self: flex-start; padding: 5px 9px; border-radius: 9px; background: #FDE8D7; color: #81451F; font: 900 11px monospace; letter-spacing: .4px; }
+.pet-promo-coupon strong { color: #81451F; font-size: 12px; line-height: 1.5; }
+.pet-promo-coupon small { color: #987757; font-size: 10px; }
+.pet-service-result-card, .pet-home-service-card { cursor: pointer; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.pet-service-result-card:hover, .pet-home-service-card:hover { transform: translateY(-4px); border-color: #EC802B; box-shadow: 0 16px 32px rgba(129,69,31,.13); }
+.pet-footer-service-link, .pet-footer-contact-link { background: transparent; border: 0; padding: 0; color: inherit; text-decoration: none; transition: color .18s ease, transform .18s ease; }
+.pet-footer-service-link:hover, .pet-footer-contact-link:hover { color: #EC802B !important; text-decoration: underline; text-underline-offset: 3px; }
+.pet-footer-service-link:hover { transform: translateX(3px); }
+.pet-footer-socials { color: #81451F; }
+.pet-social-icon { width: 36px; height: 36px; display: inline-grid; place-items: center; border: 1px solid #E8CCAD; border-radius: 12px; background: rgba(255,255,255,.72); color: #81451F; transition: transform .2s ease, color .2s ease, background .2s ease, border-color .2s ease; }
+.pet-social-icon:hover { transform: translateY(-3px); color: #fff; background: #EC802B; border-color: #EC802B; }
+.pet-social-youtube:hover { background: #81451F; border-color: #81451F; }
+.pet-social-tiktok svg { width: 17px; height: 17px; overflow: visible; }
+.pet-social-tiktok svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pet-footer-legal-link { color: inherit; text-decoration: none; transition: color .18s ease; }
+.pet-footer-legal-link:hover { color: #EC802B !important; text-decoration: underline; text-underline-offset: 3px; }
+.pet-notification-trigger:hover svg { animation: pet-bell-wiggle .45s ease; }
+@keyframes pet-bell-wiggle { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+.pet-admin-portal-root header .pet-admin-tab-nav { overflow: visible; }
+.pet-admin-portal-root header nav button { white-space: normal; }
+@media (max-width: 900px) {
+  .pet-promo-section { grid-template-columns: 1fr; }
+  .pet-promo-coupons { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 620px) {
+  .pet-marquee { margin-bottom: 30px; padding: 11px 0; }
+  .pet-marquee-group span { font-size: 12px; }
+  .pet-promo-section { width: calc(100% - 28px); padding: 18px; margin-bottom: 44px; }
+  .pet-promo-coupons { grid-template-columns: 1fr; }
+  .pet-footer-socials { justify-content: center; flex-wrap: wrap; }
+}
+
+.pet-public-nav { flex-wrap: wrap; }
+.pet-public-nav button { white-space: nowrap; }
+@media (max-width: 1080px) {
+  .pet-public-navbar { gap: 8px; padding-inline: 14px; }
+  .pet-public-nav { gap: 2px; }
+  .pet-public-nav button { padding-inline: 8px; font-size: 10px; }
+  .pet-public-nav button svg { width: 14px; height: 14px; }
+}
+@media (max-width: 760px) {
+  .pet-public-nav { order: 3; width: 100%; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding: 6px 0 2px; }
+  .pet-public-nav button { flex: 0 0 auto; }
+}
+
+.pet-assistant-selector { display:flex; gap:8px; padding:9px 12px; border-bottom:1px solid #E8CCAD; background:#FFF8EF; }
+.pet-assistant-selector button { display:inline-flex; align-items:center; gap:7px; padding:6px 10px; border:1px solid #E8CCAD; border-radius:999px; background:#fff; color:#81451F; font-size:11px; font-weight:900; transition:all .18s ease; }
+.pet-assistant-selector button img { width:24px; height:24px; border-radius:50%; object-fit:cover; background:#FFF0DC; }
+.pet-assistant-selector button:hover { transform:translateY(-1px); border-color:#EC802B; }
+.pet-assistant-selector button.is-active { color:#fff; background:#EC802B; border-color:#EC802B; box-shadow:0 4px 10px rgba(129,69,31,.12); }
+
+/* Full-width navigation aligned with the Pet Phết sitemap. */
+.pet-navbar-wrap,
+.pet-public-navbar-wrap {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.pet-navbar,
+.pet-public-navbar {
+  width: 100%;
+  min-height: 82px;
+  border: 0;
+  border-bottom: 1px solid #E8CCAD;
+  border-radius: 20px;
+  padding: 8px clamp(16px, 3vw, 48px);
+  background: rgba(255, 250, 242, .97);
+  box-shadow: 0 4px 18px rgba(117, 66, 26, .08);
+  backdrop-filter: blur(14px);
+}
+.pet-nav-links { gap: 2px; }
+.pet-nav-item {
+  min-width: 0;
+  min-height: 46px;
+  flex-direction: row;
+  gap: 7px;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.pet-nav-icon { height: auto; }
+.pet-nav-label { font-size: 12px; }
+.pet-nav-item.is-active::after { width: calc(100% - 22px); bottom: 1px; }
+.pet-public-navbar { gap: 12px; }
+.pet-public-nav { flex-wrap: nowrap; gap: 3px; }
+.pet-public-nav button { padding: 9px 10px; white-space: nowrap; }
+.pet-welcome-strip,
+#pet-services-page,
+#pet-contact-section { scroll-margin-top: 100px; }
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .pet-public-navbar { flex-wrap: wrap; }
+  .pet-public-nav { order: 3; width: 100%; justify-content: center; }
+  .pet-public-actions { margin-left: auto; }
+}
+@media (min-width: 1101px) {
+  .pet-navbar,
+  .pet-public-navbar {
+    display: grid;
+    grid-template-columns: minmax(130px, 160px) minmax(0, 1fr) auto;
+    column-gap: clamp(8px, 1.2vw, 18px);
+  }
+  .pet-brand { min-width: 0; }
+  .pet-nav-links,
+  .pet-public-nav { min-width: 0; justify-content: center; }
+  .pet-public-nav button {
+    gap: 6px;
+    padding-inline: clamp(4px, .55vw, 10px);
+    font-size: clamp(10px, .8vw, 12px);
+  }
+}
+@media (min-width: 881px) and (max-width: 1100px) {
+  .pet-navbar { gap: 6px; padding-inline: 12px; }
+  .pet-nav-links { gap: 0; }
+  .pet-nav-item { gap: 5px; padding-inline: 5px; }
+  .pet-nav-label { font-size: 10px; }
+  .pet-public-navbar {
+    display: grid;
+    grid-template-columns: minmax(110px, 130px) minmax(0, 1fr) auto;
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding-inline: 10px;
+  }
+  .pet-public-nav {
+    order: initial;
+    width: auto;
+    min-width: 0;
+    justify-content: center;
+    gap: 0;
+  }
+  .pet-public-nav button { gap: 4px; padding-inline: 4px; font-size: 10px; }
+  .pet-public-nav button svg { width: 14px; height: 14px; }
+  .pet-public-actions { gap: 4px; }
+  .pet-public-actions button { gap: 4px; padding-inline: 8px; font-size: 10px; }
+}
+@media (max-width: 1100px) {
+  .pet-public-nav { gap: 0; }
+  .pet-public-nav button { gap: 5px; padding-inline: 7px; font-size: 11px; }
+  .pet-public-nav button svg { width: 15px; height: 15px; }
+}
+@media (max-width: 760px) {
+  .pet-public-navbar { flex-wrap: wrap; }
+  .pet-public-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 6px 0 2px;
+    border-top: 1px solid #f1e0ce;
+  }
+  .pet-public-nav button { flex: 0 0 auto; }
+}

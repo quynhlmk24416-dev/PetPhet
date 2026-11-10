@@ -1,0 +1,22 @@
+/*
+ * Source for styles/tailwind.css (utility classes such as "flex", "px-4", "text-[#EC802B]" used in the JS components).
+ * Regenerate after adding new utility classes:
+ *   npx @tailwindcss/cli -i styles/tailwind.input.css -o styles/tailwind.css
+ */
+@import "tailwindcss";
+@source "../components";
+@source "../js";
+
+@theme {
+  --color-pet-cream: #E8CCAD;
+  --color-pet-cream-light: #FFF4E5;
+  --color-pet-cream-subtle: #FFFAF2;
+  --color-pet-orange: #EC802B;
+  --color-pet-orange-dark: #D96D1B;
+  --color-pet-yellow: #EDC55B;
+  --color-pet-teal: #66BCB4;
+  --color-pet-brown: #81451F;
+  --font-nunito: 'Nunito', sans-serif;
+  --font-be-vietnam: 'Be Vietnam Pro', sans-serif;
+  --font-quicksand: 'Quicksand', sans-serif;
+}

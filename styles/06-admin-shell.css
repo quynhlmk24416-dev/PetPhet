@@ -1,0 +1,52 @@
+/* Admin portal shell.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* ================================================================
+   PET PHẾT 2026 PATCH — public entry, isolated roles, supplied images
+   ================================================================ */
+.pet-app-shell {
+  background: rgba(255, 247, 235, .32) !important;
+}
+.pet-app-shell::before {
+  background-image: url('../images/brand/site-background.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  opacity: .96 !important;
+}
+.pet-public-shell,
+.pet-customer-shell,
+.pet-admin-app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+.pet-main-content { flex: 1 0 auto; }
+.pet-admin-portal-root { background: transparent !important; }
+.pet-admin-logo-button {
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+.pet-admin-logo-button:hover,
+.pet-admin-logo-button:focus-visible {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,.2));
+}
+.pet-admin-logo-button:focus-visible {
+  outline: 3px solid #EDC55B;
+  outline-offset: 3px;
+}
+.pet-admin-access-denied {
+  min-height: 70vh; display: grid; align-content: center; justify-items: center; gap: 12px;
+  padding: 35px; text-align: center; color: #81451F;
+}
+.pet-admin-access-denied h1 { font: 900 28px 'Quicksand', sans-serif; margin: 0; }
+.pet-admin-access-denied p { margin: 0; }
+.pet-admin-access-denied button { border: 0; border-radius: 14px; padding: 12px 18px; color: white; background: #EC802B; font-weight: 900; }

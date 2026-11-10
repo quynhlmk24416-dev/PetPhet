@@ -1,0 +1,240 @@
+/* Final public-page polish.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Final public-page polish: calm surfaces, consistent cards and playful interactions. */
+.pet-app-shell,
+.pet-public-shell,
+.pet-customer-shell {
+  background: #fffaf2 !important;
+}
+
+.pet-app-shell::before {
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+.pet-landing-page,
+.pet-about-page,
+.pet-pricing-page,
+.pet-booking-page {
+  background: #fffaf2;
+}
+
+.pet-landing-page > section:not(.pet-hero-section),
+.pet-about-page > section,
+.pet-pricing-page {
+  position: relative;
+}
+
+.pet-home-service-card,
+.pet-steps-grid article,
+.pet-care-notes-grid article,
+.pet-review-card,
+.pet-about-story-goals article,
+.pet-about-values-grid article {
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
+}
+
+.pet-home-service-card:hover {
+  transform: translateY(-8px) rotate(-.6deg);
+  border-color: #66BCB4;
+  box-shadow: 0 20px 34px rgba(102,188,180,.2);
+}
+.pet-home-service-card:nth-child(2):hover {
+  transform: translateY(-8px) rotate(.6deg);
+  border-color: #EDC55B;
+  box-shadow: 0 20px 34px rgba(237,197,91,.22);
+}
+.pet-home-service-card:nth-child(3):hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: #EC802B;
+  box-shadow: 0 20px 34px rgba(236,128,43,.2);
+}
+.pet-steps-grid article:hover,
+.pet-about-values-grid article:hover {
+  transform: translateY(-6px);
+  border-color: #EC802B;
+  box-shadow: 0 16px 28px rgba(129,69,31,.13);
+}
+.pet-care-notes-grid article:hover {
+  transform: translateY(-7px);
+  border-top-color: #EC802B;
+  background: #fff8ed;
+  box-shadow: 0 18px 30px rgba(129,69,31,.14);
+}
+.pet-review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(129,69,31,.14);
+}
+.pet-about-story-goals article:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 32px rgba(129,69,31,.13);
+}
+
+/* Every pricing card keeps one predictable height, including weight-tier services. */
+.pet-pricing-list {
+  grid-auto-rows: auto;
+  align-items: stretch;
+}
+.pet-pricing-card {
+  min-height: 0;
+  height: 100%;
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+}
+.pet-pricing-card:hover {
+  transform: translateY(-8px);
+  border-color: #EC802B;
+  box-shadow: 0 20px 36px rgba(236,128,43,.18);
+}
+.pet-pricing-card:nth-child(4n + 2):hover {
+  transform: translateY(-8px) rotate(.55deg);
+  border-color: #66BCB4;
+  box-shadow: 0 20px 36px rgba(102,188,180,.18);
+}
+.pet-pricing-card:nth-child(4n + 3):hover {
+  transform: translateY(-8px) rotate(-.55deg);
+  border-color: #EDC55B;
+  box-shadow: 0 20px 36px rgba(237,197,91,.2);
+}
+.pet-pricing-card:nth-child(4n):hover {
+  transform: translateY(-8px) scale(1.015);
+}
+.pet-pricing-service h2 {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+}
+.pet-pricing-rate { flex: 1 1 auto; }
+
+/* The customer-flow heading is emphasized; dropdown items stay readable and regular. */
+.pet-service-nav-menu-public .pet-public-service-trigger,
+.pet-mobile-service-trigger {
+  font-weight: 900;
+}
+.pet-service-nav-dropdown > button {
+  font-weight: 500 !important;
+}
+
+.pet-hero-paw-trail {
+  position: absolute;
+  top: clamp(54px, 8%, 78px);
+  right: clamp(24px, 5vw, 82px);
+  width: min(49%, 680px);
+  height: 150px;
+  pointer-events: none;
+  z-index: 4;
+  overflow: visible;
+}
+.pet-solid-paw {
+  position: absolute;
+  display: block;
+  left: var(--paw-x);
+  top: var(--paw-y);
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  opacity: 0;
+  transform: rotate(var(--paw-angle)) scale(.5);
+  transform-origin: center;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.pet-solid-paw.is-visible {
+  opacity: .95;
+  transform: rotate(var(--paw-angle)) scale(1);
+}
+@media (max-width: 760px) {
+  .pet-pricing-list { grid-auto-rows: auto; }
+  .pet-pricing-card { height: 100%; }
+  .pet-hero-paw-trail {
+    top: 62px;
+    right: 12px;
+    width: 60%;
+    height: 120px;
+    transform: scale(.72);
+    transform-origin: right top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-home-service-card,
+  .pet-steps-grid article,
+  .pet-care-notes-grid article,
+  .pet-review-card,
+  .pet-about-story-goals article,
+  .pet-about-values-grid article,
+  .pet-pricing-card {
+    transition: none;
+  }
+  .pet-solid-paw {
+    opacity: .95;
+    transition: none;
+    transform: rotate(var(--paw-angle)) scale(1);
+  }
+}
+
+/* Distinct hover treatments with one restrained brand color. */
+.pet-home-values-list article,
+.pet-steps-grid article,
+.pet-care-notes-grid article,
+.pet-review-card,
+.pet-booking-service-choice,
+.pet-booking-service-pricing,
+.pet-pricing-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.pet-home-values-list article::before,
+.pet-steps-grid article::before,
+.pet-care-notes-grid article::before,
+.pet-review-card::before,
+.pet-booking-service-choice::before,
+.pet-booking-service-pricing::before,
+.pet-pricing-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(105deg, transparent 18%, rgba(236,128,43,.16) 50%, transparent 82%);
+  transform: translateX(-115%);
+  transition: transform .55s cubic-bezier(.2,.8,.2,1);
+}
+.pet-home-values-list article > *,
+.pet-steps-grid article > *,
+.pet-care-notes-grid article > *,
+.pet-review-card > *,
+.pet-booking-service-choice > *,
+.pet-booking-service-pricing > *,
+.pet-pricing-card > * {
+  position: relative;
+  z-index: 1;
+}
+.pet-home-values-list article:hover::before,
+.pet-steps-grid article:hover::before,
+.pet-care-notes-grid article:hover::before,
+.pet-review-card:hover::before,
+.pet-booking-service-choice:hover::before,
+.pet-booking-service-pricing:hover::before,
+.pet-pricing-card:hover::before {
+  transform: translateX(0);
+}
+.pet-home-values-list article:hover,
+.pet-steps-grid article:hover,
+.pet-care-notes-grid article:hover,
+.pet-review-card:hover { background: #fff8ed; }
+.pet-booking-service-choice:hover { transform: translateX(5px); box-shadow: 0 10px 24px rgba(236,128,43,.14); }
+.pet-booking-service-pricing:hover { border-left-color: #EC802B; }
+.pet-pricing-card:hover::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  border: 2px solid rgba(236,128,43,.38);
+  border-radius: inherit;
+  pointer-events: none;
+  animation: pet-card-pulse .7s ease both;
+}
+@keyframes pet-card-pulse {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}

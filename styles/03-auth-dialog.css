@@ -1,0 +1,48 @@
+/* Authentication overlay.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Authentication overlay follows the mascot-left / compact white-card-right reference. */
+.pet-auth-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 22px; background: rgba(112, 67, 32, .35); backdrop-filter: blur(8px); }
+.pet-auth-shell { width: min(1190px, 100%); min-height: min(760px, calc(100vh - 44px)); max-height: calc(100vh - 44px); display: grid; grid-template-columns: 1.02fr .88fr; position: relative; overflow: hidden; border-radius: 33px; border: 1px solid rgba(255,255,255,.9); background: #fff9f0; box-shadow: 0 28px 80px rgba(75, 43, 19, .28); }
+.pet-auth-close { position: absolute; right: 17px; top: 17px; z-index: 3; width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid rgba(129,69,31,.14); border-radius: 50%; color: var(--pet-brown); background: rgba(255,255,255,.82); }
+.pet-auth-close:hover { background: white; }
+.pet-auth-visual { position: relative; min-height: 100%; background: #f7dec0 url('../images/brand/auth-background.png') center center / cover no-repeat; display: flex; flex-direction: column; justify-content: space-between; padding: 30px 35px; }
+.pet-auth-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,239,217,.4), transparent 47%, rgba(255,220,180,.12)); pointer-events: none; }
+.pet-auth-brand { position: relative; z-index: 1; display: inline-flex; flex-direction: column; align-items: flex-start; width: fit-content; text-decoration: none; color: var(--pet-brown); line-height: .92; }
+.pet-auth-brand strong { font: 900 43px 'Quicksand', sans-serif; letter-spacing: -2px; }
+.pet-auth-brand strong span { color: var(--pet-orange); }
+.pet-auth-brand small { align-self: center; margin-top: 5px; font-size: 15px; font-weight: 1000; letter-spacing: 1.4px; }
+.pet-auth-visual-caption { position: relative; z-index: 1; width: min(420px, 90%); padding: 17px 19px; border-radius: 20px; background: rgba(255,248,237,.82); border: 1px solid rgba(255,255,255,.9); backdrop-filter: blur(8px); }
+.pet-auth-visual-caption > span { display: inline-flex; align-items: center; gap: 7px; color: #d87727; font-size: 10px; font-weight: 1000; letter-spacing: 1.5px; }
+.pet-auth-visual-caption h2 { margin: 9px 0 5px; font: 900 26px/1.15 'Quicksand', sans-serif; }
+.pet-auth-visual-caption p { margin: 0; color: #876344; font: 11px/1.7 'Be Vietnam Pro', sans-serif; }
+.pet-auth-panel { overflow-y: auto; padding: 58px clamp(27px, 4vw, 54px) 24px; background: rgba(255,252,246,.96); }
+.pet-auth-heading { margin-bottom: 25px; }
+.pet-auth-heading-mark { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; color: var(--pet-orange); background: #fff0de; }
+.pet-auth-heading h2 { margin: 10px 0 4px; font: 900 clamp(29px, 3vw, 39px)/1.15 'Quicksand', sans-serif; letter-spacing: -.7px; }
+.pet-auth-heading p { max-width: 405px; margin: 0; color: #8f7258; font: 12px/1.7 'Be Vietnam Pro', sans-serif; }
+.pet-auth-form { display: flex; flex-direction: column; gap: 13px; }
+.pet-auth-field { min-height: 52px; display: flex; align-items: center; gap: 11px; padding: 0 15px; border: 1px solid #b98a60; border-radius: 17px; background: rgba(255,255,255,.65); color: var(--pet-orange); transition: border .2s, box-shadow .2s; }
+.pet-auth-field:focus-within { border-color: var(--pet-orange); box-shadow: 0 0 0 3px rgba(236,128,43,.12); }
+.pet-auth-field input { flex: 1; min-width: 0; height: 48px; border: 0; outline: 0; background: transparent; color: var(--pet-brown); font-size: 12px; }
+.pet-auth-field input::placeholder { color: #b39a83; }
+.pet-auth-field button { border: 0; background: transparent; color: #986b47; padding: 5px; }
+.pet-auth-options { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: -1px 1px 4px; color: #805d3e; font-size: 10px; font-weight: 700; }
+.pet-auth-options label { display: flex; align-items: center; gap: 6px; }
+.pet-auth-options input { accent-color: var(--pet-orange); }
+.pet-auth-options button, .pet-auth-switch button { border: 0; padding: 0; background: transparent; color: var(--pet-orange); font-size: inherit; font-weight: 1000; text-decoration: underline; text-underline-offset: 3px; }
+.pet-auth-submit { min-height: 51px; display: flex; justify-content: center; align-items: center; gap: 10px; border: 0; border-radius: 17px; background: linear-gradient(115deg, #f58b31, #e56f20); color: white; box-shadow: 0 6px 0 #c85e17, 0 9px 16px rgba(189, 89, 24, .18); font-size: 13px; font-weight: 1000; margin-top: 5px; }
+.pet-auth-submit:hover { filter: saturate(1.08); transform: translateY(-1px); }
+.pet-auth-submit:disabled { opacity: .65; transform: none; }
+.pet-auth-switch { margin: 4px 0 0; text-align: center; color: #8e755e; font-size: 11px; }
+.pet-auth-switch button { margin-left: 4px; }
+.pet-auth-alert { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 12px; margin-bottom: 13px; font-size: 11px; line-height: 1.5; }
+.pet-auth-alert.error { color: #a13b30; background: #fff0ec; border: 1px solid #f0c5bd; }
+.pet-auth-alert.success { color: #327c5e; background: #eaf8ef; border: 1px solid #c8e8d2; }
+.pet-auth-demo { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; padding: 12px 0 8px; margin-top: 19px; border-top: 1px solid #efdfcd; }
+.pet-auth-demo > div { display: flex; flex-direction: column; gap: 1px; flex: 1 1 100%; margin-bottom: 2px; }
+.pet-auth-demo b { font-size: 10px; }
+.pet-auth-demo span { color: #9e8267; font-size: 9px; }
+.pet-auth-demo button { border: 1px solid #edc69d; border-radius: 99px; padding: 7px 11px; color: #a15a25; background: #fff4e4; font-size: 10px; font-weight: 1000; }
+.pet-auth-demo button:last-child { background: #824b28; border-color: #824b28; color: white; }
+.pet-auth-note { color: #a68a70; text-align: center; font-size: 9px; line-height: 1.6; margin: 5px 0 0; }

@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "provider": "gemini",
+  "model": "gemini-2.5-flash",
+  "apiKey": "",
+  "proxyUrl": "",
+  "timeoutMs": 15000,
+  "temperature": 0.4,
+  "maxOutputTokens": 600,
+  "maxHistoryMessages": 8
+}

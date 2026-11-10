@@ -1,0 +1,80 @@
+/* First mobile / tablet breakpoints.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Mobile */
+@media (max-width: 1120px) {
+  .pet-navbar { padding: 9px 15px; gap: 9px; }
+  .pet-brand { min-width: 136px; }
+  .pet-brand-word { font-size: 30px; }
+  .pet-nav-item { min-width: 69px; padding-left: 6px; padding-right: 6px; }
+  .pet-nav-label { font-size: 10px; }
+  .pet-profile-name { display: none; }
+}
+@media (max-width: 880px) {
+  .pet-navbar-wrap { width: calc(100% - 24px); top: 7px; margin-top: 7px; }
+  .pet-navbar { min-height: 72px; border-radius: 24px; padding: 7px 12px; }
+  .pet-nav-links { display: none; }
+  .pet-brand { align-items: flex-start; min-width: 0; }
+  .pet-brand-word { font-size: 29px; }
+  .pet-brand-tagline { align-self: center; margin-left: -18px; font-size: 11px; }
+  .pet-nav-actions { margin-left: auto; }
+  .pet-mobile-toggle { display: grid; place-items: center; }
+  .pet-mobile-menu { display: grid; grid-template-columns: repeat(2,1fr); gap: 7px; margin-top: 8px; padding: 11px; border-radius: 20px; border: 1px solid #efdcc6; background: rgba(255,250,242,.97); box-shadow: var(--pet-shadow); }
+  .pet-mobile-menu button { display: flex; align-items: center; gap: 8px; border: 0; background: transparent; border-radius: 12px; padding: 11px; color: var(--pet-brown); font-size: 11px; font-weight: 900; text-align: left; }
+  .pet-mobile-menu button.is-active, .pet-mobile-menu button:hover { background: #fff0dd; color: var(--pet-orange); }
+  .pet-mobile-menu button svg { color: var(--pet-orange); }
+  .pet-hero-section { min-height: 620px; background-position: 58% center; }
+  .pet-hero-copy { width: 58%; padding-left: 5vw; padding-top: 88px; }
+  .pet-hero-copy h1 { font-size: clamp(39px, 6vw, 58px); }
+  .pet-welcome-strip { grid-template-columns: 1fr; gap: 20px; }
+  .pet-mascot-card img { height: 260px; }
+  .pet-quick-benefits { grid-template-columns: 1fr; }
+  .pet-service-grid { grid-template-columns: repeat(2,1fr); }
+  .pet-steps-grid { grid-template-columns: repeat(2,1fr); }
+  .pet-auth-shell { grid-template-columns: .8fr 1fr; }
+  .pet-auth-panel { padding: 54px 28px 20px; }
+}
+@media (max-width: 620px) {
+  .pet-navbar-wrap { width: calc(100% - 16px); }
+  .pet-navbar { min-height: 66px; border-radius: 21px; }
+  .pet-brand-word { font-size: 25px; }
+  .pet-brand-tagline { font-size: 10px; }
+  .pet-nav-actions > .relative { display: none; }
+  .pet-profile-button { min-height: 42px; padding: 3px; border: 0; background: transparent; }
+  .pet-profile-button img, .pet-profile-avatar { width: 35px; height: 35px; }
+  .pet-hero-section { min-height: 690px; background-position: 58% bottom; background-size: auto 72%; background-repeat: no-repeat; background-color: #ffecd4; border-radius: 0 0 25px 25px; }
+  .pet-hero-backdrop { background: linear-gradient(180deg, rgba(255,243,224,.98) 0%, rgba(255,243,224,.95) 42%, rgba(255,243,224,.02) 75%); }
+  .pet-hero-copy { width: 100%; padding: 46px 23px 0; }
+  .pet-hero-copy h1 { margin-top: 16px; font-size: clamp(39px, 10vw, 52px); }
+  .pet-hero-copy > p { max-width: 96%; font-size: 12px; }
+  .pet-hero-actions { margin-top: 20px; gap: 8px; }
+  .pet-hero-actions .pet-button { min-height: 42px; padding: 10px 13px; font-size: 11px; }
+  .pet-coupon-row { display: none; }
+  .pet-hero-trust { gap: 10px; margin-top: 17px; }
+  .pet-hero-trust span { font-size: 9px; }
+  .pet-hero-scroll { display: none; }
+  .pet-welcome-strip, .pet-quick-benefits, .pet-section-block, .pet-how-it-works, .pet-review-section, .pet-bottom-cta { width: calc(100% - 28px); }
+  .pet-welcome-strip { margin-top: 32px; }
+  .pet-welcome-copy h2 { font-size: 27px; }
+  .pet-mascot-card img { height: 190px; }
+  .pet-quick-benefits { margin-bottom: 42px; }
+  .pet-service-grid { grid-template-columns: 1fr; }
+  .pet-service-image-wrap { height: 205px; }
+  .pet-section-heading { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .pet-how-it-works { padding: 25px 17px; }
+  .pet-steps-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pet-steps-grid article { padding: 13px; }
+  .pet-steps-grid h3 { font-size: 12px; }
+  .pet-review-grid { grid-template-columns: 1fr; }
+  .pet-bottom-cta { padding: 24px 20px; align-items: flex-start; flex-direction: column; }
+  .pet-auth-overlay { padding: 9px; }
+  .pet-auth-shell { display: block; min-height: 0; max-height: calc(100vh - 18px); border-radius: 24px; overflow-y: auto; }
+  .pet-auth-visual { display: none; }
+  .pet-auth-panel { overflow: visible; padding: 54px 22px 20px; }
+  .pet-auth-heading h2 { font-size: 30px; }
+  .pet-auth-close { right: 10px; top: 10px; }
+  .pet-auth-demo { margin-top: 14px; }
+  .pet-account-page { width: calc(100% - 28px); padding-top: 28px; }
+  .pet-account-grid { grid-template-columns: 1fr; }
+  .pet-account-notifications { grid-column: auto; }
+}

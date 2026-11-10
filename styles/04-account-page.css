@@ -1,0 +1,40 @@
+/* Account page and general page refinements.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* Account page */
+.pet-account-page { width: min(1160px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0 65px; }
+.pet-page-intro { margin-bottom: 26px; }
+.pet-page-intro h1 { margin: 7px 0; font: 900 clamp(28px, 3vw, 39px) 'Quicksand', sans-serif; }
+.pet-page-intro p { margin: 0; color: #937454; font: 12px 'Be Vietnam Pro', sans-serif; }
+.pet-account-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+.pet-account-card { background: rgba(255,255,255,.94); border: 1px solid #f0ddc7; border-radius: 24px; padding: 23px; box-shadow: 0 9px 26px rgba(121, 71, 31, .06); }
+.pet-account-card-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 19px; }
+.pet-account-card-heading > span { width: 43px; height: 43px; border-radius: 14px; display: grid; place-items: center; background: #fff0df; color: var(--pet-orange); }
+.pet-account-card-heading > span.teal { background: #e7f7f3; color: #4ca89e; }
+.pet-account-card-heading > span.yellow { background: #fff5d9; color: #ce9c2d; }
+.pet-account-card-heading h2 { margin: 0; font: 900 16px 'Quicksand', sans-serif; }
+.pet-account-card-heading p { margin: 3px 0 0; color: #9b8066; font-size: 10px; }
+.pet-account-form { display: flex; flex-direction: column; gap: 12px; }
+.pet-account-form > label { display: flex; flex-direction: column; gap: 6px; font-size: 10px; font-weight: 900; color: #81512f; }
+.pet-account-form input:not([type=checkbox]) { width: 100%; min-height: 42px; border: 1px solid #ecd9c3; border-radius: 12px; padding: 9px 12px; outline: 0; color: var(--pet-brown); background: #fffaf4; font-size: 12px; }
+.pet-account-form input:focus { border-color: var(--pet-orange); box-shadow: 0 0 0 3px rgba(236,128,43,.1); }
+.pet-account-form input[readonly] { background: #f8f0e7; color: #9b8066; }
+.pet-account-form small { color: #a98c70; font-size: 9px; font-weight: 500; }
+.pet-account-input-icon { position: relative; }
+.pet-account-input-icon > svg { position: absolute; top: 12px; left: 12px; color: var(--pet-orange); }
+.pet-account-input-icon input { padding-left: 38px !important; }
+.pet-account-form > .pet-button { align-self: flex-start; min-height: 40px; padding: 10px 14px; font-size: 11px; }
+.pet-account-feedback { display: flex; align-items: center; gap: 7px; margin: 0; color: #368467; font-size: 10px; }
+.pet-account-feedback.error { color: #b74a3d; }
+.pet-account-notifications { grid-column: 1 / -1; }
+.pet-preference-list { display: flex; flex-direction: column; margin: -4px 0 16px; }
+.pet-preference-list label { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 2px; border-bottom: 1px solid #f2e7d9; }
+.pet-preference-list label:last-child { border-bottom: 0; }
+.pet-preference-list b, .pet-preference-list small { display: block; }
+.pet-preference-list b { font-size: 11px; }
+.pet-preference-list small { margin-top: 3px; color: #9b8066; font-size: 9px; }
+.pet-preference-list input { width: 18px; height: 18px; accent-color: var(--pet-orange); }
+
+/* General page refinements */
+footer { background: rgba(255, 250, 242, .96) !important; border-top: 1px solid #eddbc5 !important; }
+footer, footer p, footer span, footer a { color: #805737; }

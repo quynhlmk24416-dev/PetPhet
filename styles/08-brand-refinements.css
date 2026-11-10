@@ -1,0 +1,341 @@
+/* Brand artwork refinements for auth, footer, hero and chatbot.
+   NOTE: files are loaded in numeric order (see index.html) - later rules intentionally override earlier ones. */
+
+/* ================================================================
+   PET PHẾT UI REFINEMENT — auth, readable footer, logo, service cards,
+   chatbot and compact toast notifications
+   ================================================================ */
+
+/* Correct the heading so each phrase stays on its intended line. */
+.pet-hero-copy {
+  width: min(760px, 59%);
+  padding-left: clamp(28px, 5vw, 72px);
+  padding-top: clamp(58px, 7.5vw, 104px);
+  padding-bottom: 76px;
+}
+.pet-hero-title {
+  max-width: none;
+  margin: 18px 0 14px;
+  font-size: clamp(26px, 2.75vw, 44px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -1.2px !important;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+.pet-hero-title > span,
+.pet-hero-title > em {
+  display: inline !important;
+  white-space: nowrap;
+}
+.pet-hero-title > span {
+  margin-right: 0.28em;
+}
+.pet-hero-copy > p {
+  max-width: none;
+  white-space: nowrap;
+}
+.pet-hero-mascots {
+  width: min(55%, 820px) !important;
+  right: 0;
+  height: 100%;
+}
+.pet-hero-mascots img {
+  object-fit: contain !important;
+  object-position: right bottom !important;
+}
+
+/* Use the supplied brand artwork in both navigation bars. */
+.pet-brand {
+  min-width: 148px;
+  min-height: 66px;
+  justify-content: center;
+}
+.pet-brand-logo {
+  display: block;
+  width: clamp(112px, 11vw, 156px);
+  height: 82px;
+  object-fit: contain;
+  object-position: center;
+}
+.pet-brand-logo:hover { transform: scale(1.035); }
+.pet-public-navbar { min-height: 94px; }
+.pet-navbar { min-height: 94px; }
+
+/* Authentication dialog: both mascot figures stay inside the frame;
+   the form panel scrolls independently on short desktop screens and
+   the complete dialog scrolls on smaller screens. */
+.pet-auth-overlay {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  align-items: center;
+  padding: 14px;
+}
+.pet-auth-shell {
+  width: min(1220px, 100%);
+  height: min(860px, calc(100dvh - 28px));
+  min-height: 0;
+  max-height: calc(100dvh - 28px);
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  overflow: hidden;
+}
+.pet-auth-visual {
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  background: linear-gradient(145deg, #ffe7c5 0%, #fff2df 56%, #f7d9b2 100%);
+}
+.pet-auth-visual::after {
+  background: linear-gradient(180deg, rgba(255,245,230,.20), rgba(255,236,210,.03) 58%, rgba(255,240,219,.24));
+}
+.pet-auth-visual-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  padding: 86px 10px 100px;
+}
+.pet-auth-brand {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: block;
+  width: 148px;
+  height: 96px;
+}
+.pet-auth-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.pet-auth-visual-caption {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  width: auto;
+  padding: 12px 15px;
+  background: rgba(255,250,242,.91);
+  border-color: rgba(255,255,255,.98);
+}
+.pet-auth-visual-caption h2 { font-size: 22px; margin: 6px 0 3px; }
+.pet-auth-visual-caption p { font-size: 10px; }
+.pet-auth-panel {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #66BCB4 #FFF4E5;
+  padding: 48px clamp(28px, 4vw, 58px) 30px;
+}
+.pet-auth-panel::-webkit-scrollbar { width: 7px; }
+.pet-auth-panel::-webkit-scrollbar-thumb { background: #66BCB4; border-radius: 20px; }
+.pet-auth-heading { margin-bottom: 20px; }
+.pet-auth-form { gap: 11px; }
+.pet-auth-field { flex: 0 0 auto; min-height: 52px; }
+.pet-auth-demo { margin-top: 16px; }
+.pet-auth-note { margin-bottom: 10px; }
+.pet-auth-close { box-shadow: 0 2px 12px rgba(95,57,26,.10); }
+
+/* Service cards are interactive as a whole; the only in-card action
+   is the separate booking CTA. Clicking the backdrop closes details. */
+.pet-service-result-card {
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.pet-service-result-card:focus-visible {
+  box-shadow: 0 0 0 4px rgba(236,128,43,.26), var(--pet-shadow);
+  border-color: #EC802B;
+}
+.pet-service-result-card .pet-service-card-footer button { cursor: pointer; }
+.pet-service-detail-backdrop {
+  overscroll-behavior: contain;
+  animation: pet-service-backdrop-enter 180ms ease-out both;
+}
+.pet-service-detail-dialog {
+  animation: pet-service-dialog-enter 220ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes pet-service-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pet-service-dialog-enter {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pet-service-detail-backdrop,
+  .pet-service-detail-dialog { animation: none; }
+}
+
+/* Footer: retain the requested mascot background while placing a warm,
+   translucent reading surface behind the text for strong contrast. */
+.pet-footer {
+  position: relative;
+  isolation: isolate;
+  min-height: 420px;
+  padding-top: 42px !important;
+  background-color: #fff2df !important;
+  background-image:
+    linear-gradient(90deg, rgba(255,248,239,.97) 0%, rgba(255,248,239,.94) 49%, rgba(255,248,239,.78) 100%),
+    url('../images/brand/footer-background.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  border-top: 3px solid #EC802B !important;
+}
+.pet-footer > .max-w-7xl {
+  position: relative;
+  z-index: 1;
+  padding: 24px 28px 14px;
+  border: 1px solid rgba(255,255,255,.88);
+  border-radius: 26px;
+  background: rgba(255,250,243,.72);
+  box-shadow: 0 10px 34px rgba(112,65,29,.08);
+  backdrop-filter: blur(5px);
+}
+.pet-footer, .pet-footer p, .pet-footer span, .pet-footer li,
+.pet-footer h3, .pet-footer h4, .pet-footer strong { color: #68401f !important; }
+.pet-footer h4 { font-size: 17px !important; }
+.pet-footer p, .pet-footer li { font-size: 13px !important; line-height: 1.7 !important; }
+.pet-footer .text-orange-100\/90,
+.pet-footer .text-orange-100\/80 { color: #6f4a2c !important; }
+.pet-footer .text-white { color: #68401f !important; }
+.pet-footer .border-b { border-color: rgba(129,69,31,.24) !important; }
+.pet-footer .text-xs { font-size: 12px !important; }
+.pet-footer-logo {
+  display: block;
+  width: min(205px, 100%);
+  height: 126px;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 3px 5px rgba(104,64,31,.08));
+}
+
+/* Replace the small tile artwork with the supplied headset Cún Phết. */
+.pet-chatbot-launcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 106px !important;
+  height: 112px !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+.pet-chatbot-launcher > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 8px 13px rgba(96,55,22,.17));
+}
+.pet-chatbot-drawer { max-height: calc(100dvh - 118px); }
+.pet-chatbot-drawer input { color: #71421F; }
+.pet-chatbot-messages {
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.pet-chatbot-messages::-webkit-scrollbar:horizontal { display: none; height: 0; }
+.pet-chatbot-message-row { min-width: 0; }
+.pet-chatbot-message-bubble {
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+/* Toasts are now text-only; no large illustration panel. */
+.pet-toast-card {
+  grid-template-columns: minmax(0,1fr) 28px;
+  gap: 12px;
+  min-height: 72px;
+  padding: 15px 16px;
+}
+.pet-toast-copy strong { font-size: 15px; }
+.pet-toast-copy p { font-size: 13px; line-height: 1.55; }
+.pet-toast-close { width: 28px; height: 28px; }
+
+@media (max-width: 900px) {
+  .pet-hero-copy { width: 60%; padding-left: 4.5vw; }
+  .pet-hero-title { font-size: clamp(37px, 5.1vw, 52px) !important; }
+  .pet-hero-mascots { width: 52% !important; }
+  .pet-auth-shell { grid-template-columns: minmax(0,.82fr) minmax(0,1.18fr); }
+  .pet-auth-panel { padding: 44px 30px 26px; }
+  .pet-brand-logo { width: 126px; height: 76px; }
+}
+
+@media (max-width: 680px) {
+  .pet-auth-overlay {
+    align-items: flex-start;
+    padding: 8px;
+  }
+  .pet-auth-shell {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    border-radius: 22px;
+  }
+  .pet-auth-visual {
+    display: block;
+    flex: 0 0 auto;
+    height: 205px;
+    min-height: 205px;
+  }
+  .pet-auth-visual-image { padding: 38px 6px 8px; object-position: center center; }
+  .pet-auth-brand { top: 7px; left: 11px; width: 100px; height: 68px; }
+  .pet-auth-visual-caption { display: none; }
+  .pet-auth-panel {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 28px 20px 28px;
+  }
+  .pet-auth-close { position: absolute; top: 10px; right: 10px; }
+  .pet-auth-heading h2 { font-size: 30px; }
+  .pet-hero-section {
+    min-height: 740px !important;
+    background: linear-gradient(180deg,#fff2df 0%,#ffe8c9 100%) !important;
+  }
+  .pet-hero-copy { width: 100% !important; padding: 34px 20px 0 !important; }
+  .pet-hero-title { font-size: clamp(34px, 9.5vw, 48px) !important; line-height: 1.08 !important; letter-spacing: -1px !important; }
+  .pet-hero-title > span, .pet-hero-title > em { white-space: normal; }
+  .pet-hero-copy > p { max-width: 100%; }
+  .pet-hero-mascots { width: 100% !important; height: 42%; right: 0; bottom: 0; justify-content: center; }
+  .pet-hero-mascots img { object-position: center bottom !important; }
+  .pet-public-navbar .pet-brand-logo, .pet-navbar .pet-brand-logo { width: 94px; height: 62px; }
+  .pet-footer {
+    min-height: 620px;
+    background-image:
+      linear-gradient(180deg, rgba(255,248,239,.98) 0%, rgba(255,248,239,.96) 58%, rgba(255,248,239,.50) 100%),
+      url('../images/brand/footer-background.png') !important;
+    background-size: cover !important;
+    background-position: center bottom !important;
+  }
+  .pet-footer > .max-w-7xl { padding: 20px 17px 12px; background: rgba(255,250,243,.78); }
+  .pet-footer-logo { width: 172px; height: 105px; object-position: left center; }
+  .pet-chatbot-float { right: 12px !important; bottom: 12px !important; }
+  .pet-chatbot-launcher { width: 82px !important; height: 88px !important; }
+  .pet-chatbot-drawer { right: 10px !important; bottom: 105px !important; width: calc(100vw - 20px) !important; max-width: none; height: min(600px, calc(100dvh - 125px)) !important; }
+  .pet-toast-viewport { top: 10px; right: 10px; width: calc(100vw - 20px); }
+  .pet-toast-card { grid-template-columns: minmax(0,1fr) 25px; gap: 8px; padding: 12px; }
+  .pet-toast-copy p { font-size: 12px; }
+}
